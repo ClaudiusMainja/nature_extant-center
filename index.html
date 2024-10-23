@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nature Extend - Animal Law Lectures</title>
+    <title>Nature Extant Learning Center</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js"
@@ -25,15 +25,13 @@
     />
   </head>
 
-  <body
-    class="font-sans bg-gradient-to-br from-green-800 to-blue-900 text-white"
-  >
+ 
     <div id="particles-js" class="fixed inset-0"></div>
 
     <header
       class="fixed w-full z-10 transition-all duration-300"
       x-data="{ isScrolled: false, isOpen: false }"
-      :class="{ 'bg-white': !isScrolled, 'bg-white shadow': isScrolled }"
+      :class="{ 'bg-white': !isScrolled, 'bg-slate-200 shadow': isScrolled }"
       @scroll.window="isScrolled = (window.pageYOffset > 20)"
     >
       <nav class="container mx-auto px-8 py-2">
@@ -88,7 +86,7 @@
           </ul>
           <button
             @click="isOpen = !isOpen"
-            class="md:hidden text-white focus:outline-none"
+            class="md:hidden  text-teal-900 size-36 focus:outline-none"
           >
             <i x-show="!isOpen" class="fas fa-bars"></i>
             <i x-show="isOpen" class="fas fa-times"></i>
@@ -126,39 +124,43 @@
           >
           <a
             href="Registration.html"
-            class="block py-2 hover:text-green-300 transition duration-300"
+            class="block py-2 hover:text-green-300 transition duration-300 "
             >Register</a
           >
         </div>
       </nav>
     </header>
 
-    <main>
+    <body
+    class="font-sans bg-gradient-to-br from-green-800 to-blue-900 text-white container w-auto md:container md:w-auto sm:container sm:w-auto"
+  >
       <section
-        class="hero h-screen flex flex-wrap items-center py-12 relative overflow-hidden"
+        class="hero h-screen flex flex-wrap justify-center content-center items-center py-4 relative overflow-hidden "
       >
-        <div class="container w-3/4 p-20 text-left items-center py-14 relative z-10 mb-12">
+        <div class="container p-20  justify-items-center items-center py-14 relative z-10 mx-12 w-3/4 md:container md:w-3/4">
           <h1
-            class="text-4xl md:text-7xl font-black mb-8 leading-tight text-pretty"
+            class="text-4xl md:text-7xl font-black mb-8 leading-tight text-pretty text-center"
           >
-            Empowering Animal Advocates
+     We Are Empowering Animal Advocates 
           </h1>
-          <p class="text-xl md:text-2xl text-left mb-12">
+          <p class="text-xl md:text-2xl mb-12 text-center text-wrap">
             Join our community of passionate experts and shape the future of
             animal law
           </p>
+          <div class="justify-items-center">
           <a
             href="Registration.html"
-            class="bg-green-500 hover:bg-green-400 text-white font-bold py-3 px-8 ractangle-full text-lg transition duration-300 transform hover:scale-105 inline-block"
+            class="bg-slate-300 hover:bg-green-400 text-teal-950 hover:text-white font-bold py-3 px-8 ractangle-full text-lg transition duration-300 transform hover:scale-105 inline-block align-middle"
             >Start Your Journey</a
           >
+        </div class="text-nowrap">
         </div>
         <div class="absolute inset-0 z-0">
           <img
-            src="images/homebg.jpg"
+            src="images/MainHero.png"
             alt="Hero Background"
             id="bg"
-            class="w-full h-full object-cover opacity-60"
+            class="w-full h-full object-cover bg-no-repeat opacity-60"
           />
         </div>
       </section>
@@ -166,10 +168,10 @@
       <section id="about" class="py-8 px-8 bg-teal-950">
         <div class="container mx-auto px-4">
           <h2 class="text-4xl font-bold text-center mb-12">
-            About Nature Extend
+            Who We Are As NELC
           </h2>
           <div class="max-w-4xl mx-auto glass-effect rounded-lg p-8">
-            <p class="text-lg leading-relaxed">
+            <p class="text-lg leading-relaxed text-center">
               Nature Extend is dedicated to educating and empowering the next
               generation of animal law advocates. Our comprehensive programs
               combine theoretical knowledge with practical skills to prepare you
@@ -181,7 +183,7 @@
         </div>
       </section>
 
-      <section id="modules" class="py-20">
+      <section id="modules" class="py-20 m-auto md:m-14 sm:m-10">
         <div class="container mx-auto px-4">
           <h2 class="text-4xl font-bold text-center mb-12">Our Modules</h2>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -225,7 +227,7 @@
               class="glass-effect rounded-lg overflow-hidden transform transition duration-300 hover:scale-105"
             >
               <img
-                src="giraf.jpg"
+                src="images/wildlife mnagement.png"
                 alt="Wildlife Management"
                 class="w-full h-48 object-cover"
               />
@@ -243,7 +245,7 @@
               class="glass-effect rounded-lg overflow-hidden transform transition duration-300 hover:scale-105"
             >
               <img
-                src="giraf.jpg"
+                src="images/Community Based Wildlife Management.png"
                 alt="Community Based Wildlife Management"
                 class="w-full h-48 object-cover"
               />
@@ -262,7 +264,7 @@
               class="glass-effect rounded-lg overflow-hidden transform transition duration-300 hover:scale-105"
             >
               <img
-                src="giraf.jpg"
+                src="images/Research Methods.png"
                 alt="Research Methods"
                 class="w-full h-48 object-cover"
               />
@@ -279,7 +281,7 @@
               class="glass-effect rounded-lg overflow-hidden transform transition duration-300 hover:scale-105"
             >
               <img
-                src="giraf.jpg"
+                src="images/Wildlife Law Advocacy.png"
                 alt="Wildlife Law Advocacy"
                 class="w-full h-48 object-cover"
               />
@@ -296,7 +298,7 @@
               class="glass-effect rounded-lg overflow-hidden transform transition duration-300 hover:scale-105"
             >
               <img
-                src="giraf.jpg"
+                src="images/Intersection Of Wildlife Law.png"
                 alt="Intersection Of Wildlife Law"
                 class="w-full h-48 object-cover"
               />
@@ -315,7 +317,7 @@
               class="glass-effect rounded-lg overflow-hidden transform transition duration-300 hover:scale-105"
             >
               <img
-                src="giraf.jpg"
+                src="images/Wildlife Law Enforcement.png"
                 alt="Wildlife Law Enforcement"
                 class="w-full h-48 object-cover"
               />
@@ -332,7 +334,7 @@
               class="glass-effect rounded-lg overflow-hidden transform transition duration-300 hover:scale-105"
             >
               <img
-                src="giraf.jpg"
+                src="images/Assistant Lecturer Program.png"
                 alt="Assistant Lecturer Program"
                 class="w-full h-48 object-cover"
               />
@@ -350,21 +352,21 @@
         </div>
       </section>
 
-      <section id="register" class="py-20 relative overflow-hidden">
-        <div class="container mx-auto px-4 relative z-10">
+      <section id="register" class="py-20 relative overflow-hidden bg-teal-900 hover:scale-125 glass-effect">
+        <div class="container mx-auto px-4 relative z-10 ">
           <div
-            class="max-w-6xl mx-auto text-center glass-effect rounded-lg p-8"
+            class="max-w-6xl mx-auto text-center rounded-lg p-8"
           >
-            <h2 class="text-4xl font-bold mb-6">Ready to Make a Difference?</h2>
-            <p class="text-xl mb-8">
+            <h2 class="text-4xl font-bold mb-6 text-white">Ready to Make a Difference?</h2>
+            <p class="text-xl mb-8 text-white">
               Join our next cohort and start your journey in animal law advocacy
             </p>
             <a
-              href="#"
-              class="bg-green-500 hover:bg-green-400 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 inline-block"
+              href="Registration.html"
+              class="bg-orange-500 hover:bg-green-400 text-white font-bold py-3 px-8 ractangle-full text-lg transition duration-300 transform hover:scale-105 inline-block"
               >Register Now</a
             >
-            <p class="mt-6 text-lg">
+            <p class="mt-6 text-lg text-orange-200">
               Next cohort starts in:
               <span id="countdown" class="font-bold"></span>
             </p>
@@ -372,8 +374,8 @@
         </div>
       </section>
 
-      <section id="students" class="py-20 bg-teal-950">
-        <div class="container mx-auto px-4">
+      <section id="students" class="py-20 m-auto md:m-14 sm:m-10">
+        <div class="container m-auto px-4">
           <h2 class="text-4xl font-bold text-center mb-12">
             Our Student Stories
           </h2>
@@ -469,7 +471,7 @@
       </section>
     </main>
 
-    <footer class="bg-green-900 py-8">
+    <footer class="bg-teal-900 py-8">
       <div class="container mx-auto px-4 text-center">
         <div class="flex flex-wrap justify-center mb-4">
           <a href="#" class="mx-2 hover:text-green-300 transition duration-300"
@@ -593,5 +595,6 @@
       };
       typeWriter();
     </script>
+    
   </body>
 </html>
