@@ -131,24 +131,24 @@
         showTeamInfo: null
     }">
 
-<section class="container md:m-auto">
-    <div class="m-auto container m-24">
+<section >
+    
         <!-- Hero Section -->
-        <div class="container relative h-screen bg-green-900">
+        <div class="relative h-screen bg-green-900">
             <div class="absolute inset-0">
-                <img src="/images/homebg.png" alt="Nature Background" class="w-full h-full object-cover opacity-40">
+                <img src="/images/homebg.png" alt="Nature Background" class="w-full h-full object-cover opacity-40 ">
             </div>
             <div class="relative flex items-center justify-center h-full  content-center ">
                 <div class="text-center" x-data="{ shown: false }" x-init="setTimeout(() => shown = true, 500)">
                     <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl transition-all duration-1000"
                         :class="shown ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'">
-                        About Nature Extend
+                       Our Current Student Stories
                     </h1>
                     <p class="mt-6 text-xl text-gray-200 transition-all duration-1000 delay-300"
                         :class="shown ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'">
-                        Pioneering the Future of Animal Law Education
+                      Listen to our Alumni and current student stories and how they have been impacted
                     </p>
-                    <a href="#about" class="mt-8 inline-block animate-bounce cursor-pointer">
+                    <a href="#students" class="mt-8 inline-block animate-bounce cursor-pointer">
                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M19 14l-7 7m0 0l-7-7m7 7V3" />
@@ -218,7 +218,7 @@
                     </div>
 
                 </div>
-            </div>
+
         </section>
     </div>
     </section>
