@@ -146,173 +146,77 @@
       </nav>
     </header>
 
-<body>
-  <div class="header">
-    <h1>Document Library</h1>
-    <div class="search-bar">
-        <input type="text" id="searchInput" placeholder="Search documents...">
+    <body class="bg-gray-50" >
+
+ 
+
+  <!-- Hero Section -->
+  <div class="relative h-screen bg-green-900">
+    <div class="absolute inset-0">
+        <img src="assets/images/resource.jpg"  alt="Nature Background" class="w-full h-full object-cover opacity-40">
     </div>
-</div>
-
-<div class="grid" id="documentGrid"></div>
-
-<!-- Modal for document preview -->
-<div class="modal" id="documentModal">
-    <div class="modal-content">
-        <span class="close-modal" id="closeModal">&times;</span>
-        <div id="documentViewer"></div>
-        <div class="loading-spinner" id="loadingSpinner">
-            <i class="fas fa-spinner"></i>
+    <div class="relative flex items-center justify-center h-full  content-center -py-24">
+        <div class="text-center" x-data="{ shown: false }" x-init="setTimeout(() => shown = true, 500)">
+            <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl transition-all duration-1000"
+                :class="shown ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'">
+                Get Access to Our Resources
+            </h1>
+            <p class="mt-6 text-xl text-gray-200 transition-all duration-1000 delay-300"
+                :class="shown ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'">
+                Pioneering the Future of Animal Law Education
+            </p>
+            <a href="#about" class="mt-8 inline-block animate-bounce cursor-pointer">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+            </a>
         </div>
     </div>
 </div>
 
+  <div class="container">    
+    <input type="text" class="search-box" placeholder="Search resources...">
+    
+    <div class="category">
+        <h2 class="category-title">Constitution and Policies </h2>
+        <ul class="resource-grid">
+            <li class="resource-card">
+                <span class="file-type">PDF</span>
+                <i class="resource-icon fas fa-book"></i>
+                <div class="resource-title">Constitution of Animal Law</div>
+                <div class="resource-meta">Size: 12MB • Updated: 2024</div>
+                <a href="assets/books/Constitution.docx" class="download-btn bg-teal-900 hover:bg">Download</a>
+            </li>
+            
+    </div>
+
+    <div class="category">
+        <h2 class="category-title">Study Materials</h2>
+        <ul class="resource-grid">
+            <li class="resource-card">
+                <span class="file-type">PDF</span>
+                <i class="resource-icon fas fa-file-pdf"></i>
+                <div class="resource-title">Facaulty of Law Programme</div>
+                <div class="resource-meta">Size: 5MB • Updated: 2024</div>
+                <a href="assets/books/Faculty of Law postgraduate programmes.pdf" class="download-btn bg-teal-950 hover:bg-teal-800">Download</a>
+            </li>
+    </div>
+</div>
+
 <script>
-    // Sample document data
-    const documents = [
-        {
-            id: 1,
-            title: "Annual Report 2024",
-            type: "pdf",
-            size: "2.4 MB",
-            updated: "2 days ago",
-            url: "/api/placeholder/800/1000",
-            icon: "file-pdf"
-        },
-        {
-            id: 2,
-            title: "Project Proposal",
-            type: "docx",
-            size: "1.1 MB",
-            updated: "5 days ago",
-            url: "/api/placeholder/800/1000",
-            icon: "file-word"
-        },
-        {
-            id: 3,
-            title: "Financial Analysis",
-            type: "xlsx",
-            size: "856 KB",
-            updated: "1 week ago",
-            url: "/api/placeholder/800/1000",
-            icon: "file-excel"
-        },
-        {
-            id: 4,
-            title: "Company Presentation",
-            type: "pptx",
-            size: "3.2 MB",
-            updated: "3 days ago",
-            url: "/api/placeholder/800/1000",
-            icon: "file-powerpoint"
-        }
-    ];
-
-    // DOM Elements
-    const documentGrid = document.getElementById('documentGrid');
-    const searchInput = document.getElementById('searchInput');
-    const modal = document.getElementById('documentModal');
-    const closeModal = document.getElementById('closeModal');
-    const documentViewer = document.getElementById('documentViewer');
-    const loadingSpinner = document.getElementById('loadingSpinner');
-
-    // Render documents
-    function renderDocuments(docs) {
-        documentGrid.innerHTML = docs.map(doc => `
-            <div class="document-card">
-                <div class="document-icon">
-                    <i class="fas fa-${doc.icon}"></i>
-                </div>
-                <div class="document-title">${doc.title}</div>
-                <div class="document-info">${doc.type.toUpperCase()} • ${doc.size} • Updated ${doc.updated}</div>
-                <div class="document-actions">
-                    <button class="action-button" onclick="viewDocument(${doc.id})">
-                        <i class="fas fa-eye"></i> View
-                    </button>
-                    <button class="action-button" onclick="downloadDocument(${doc.id})">
-                        <i class="fas fa-download"></i> Download
-                    </button>
-                </div>
-            </div>
-        `).join('');
-    }
-
-    // View document
-    function viewDocument(id) {
-        const document = documents.find(doc => doc.id === id);
-        if (document) {
-            modal.style.display = 'block';
-            loadingSpinner.style.display = 'block';
-            documentViewer.innerHTML = '';
-
-            // Simulate loading
-            setTimeout(() => {
-                loadingSpinner.style.display = 'none';
-                // Show placeholder image for demo
-                documentViewer.innerHTML = `
-                    <h2 style="margin-bottom: 1rem;">${document.title}</h2>
-                    <img src="${document.url}" alt="Document preview" style="width: 100%; border: 1px solid #ddd; border-radius: 4px;">
-                `;
-            }, 1000);
-        }
-    }
-
-    // Download document
-    function downloadDocument(id) {
-        const document = documents.find(doc => doc.id === id);
-        if (document) {
-            // Simulate download start
-            const link = document.url;
-            const filename = `${document.title}.${document.type}`;
-            
-            // Create notification
-            const notification = document.createElement('div');
-            notification.style.position = 'fixed';
-            notification.style.bottom = '20px';
-            notification.style.right = '20px';
-            notification.style.background = '#4a9043';
-            notification.style.color = 'white';
-            notification.style.padding = '1rem';
-            notification.style.borderRadius = '5px';
-            notification.style.zIndex = '1000';
-            notification.innerHTML = `Downloading: ${filename}`;
-            
-            document.body.appendChild(notification);
-            
-            // Remove notification after 3 seconds
-            setTimeout(() => {
-                notification.remove();
-            }, 3000);
-        }
-    }
-
-    // Close modal
-    closeModal.onclick = function() {
-        modal.style.display = 'none';
-    }
-
-    // Close modal when clicking outside
-    window.onclick = function(event) {
-        if (event.target === modal) {
-            modal.style.display = 'none';
-        }
-    }
-
-    // Search functionality
-    searchInput.addEventListener('input', (e) => {
+    document.querySelector('.search-box').addEventListener('input', function(e) {
         const searchTerm = e.target.value.toLowerCase();
-        const filteredDocs = documents.filter(doc => 
-            doc.title.toLowerCase().includes(searchTerm) || 
-            doc.type.toLowerCase().includes(searchTerm)
-        );
-        renderDocuments(filteredDocs);
+        const cards = document.querySelectorAll('.resource-card');
+        
+        cards.forEach(card => {
+            const text = card.textContent.toLowerCase();
+            card.style.display = text.includes(searchTerm) ? '' : 'none';
+        });
     });
-
-    // Initial render
-    renderDocuments(documents);
 </script>
 </body>
-
+  
 <!--Footer Section-->
 <footer class="bg-teal-900 py-8 text-white">
   <div class="container mx-auto px-4 text-center">
