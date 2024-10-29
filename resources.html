@@ -145,155 +145,16 @@
       </nav>
     </header>
 
-    <body class>
-        <div id="root"></div>
-        
-        <script type="module">
-            import React, { useState } from 'https://esm.sh/react';
-            import ReactDOM from 'https://esm.sh/react-dom';
-            import { Search, BookOpen, Download, Filter } from 'https://esm.sh/lucide-react';
-    
-            const ResourcesPage = () => {
-                const [searchTerm, setSearchTerm] = useState('');
-                const [selectedCategory, setSelectedCategory] = useState('all');
-    
-                const resources = [
-                    {
-                        id: 1,
-                        title: "Criminal Law Act 2023",
-                        category: "Criminal Law",
-                        type: "Act",
-                        description: "Latest updated criminal law act with amendments and case references.",
-                        downloadLink: "#",
-                        size: "2.4 MB",
-                        date: "2024-01-15"
-                    },
-                    {
-                        id: 2,
-                        title: "Company Law Handbook",
-                        category: "Corporate Law",
-                        type: "Book",
-                        description: "Comprehensive guide to company law and corporate governance.",
-                        downloadLink: "#",
-                        size: "5.1 MB",
-                        date: "2024-02-20"
-                    },
-                    {
-                        id: 3,
-                        title: "Environmental Protection Act",
-                        category: "Environmental Law",
-                        type: "Act",
-                        description: "Complete environmental protection guidelines and regulations.",
-                        downloadLink: "#",
-                        size: "3.7 MB",
-                        date: "2024-03-10"
-                    }
-                ];
-    
-                const categories = ['all', 'Criminal Law', 'Corporate Law', 'Environmental Law'];
-    
-                const filteredResources = resources.filter(resource => {
-                    const matchesSearch = resource.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                                        resource.description.toLowerCase().includes(searchTerm.toLowerCase());
-                    const matchesCategory = selectedCategory === 'all' || resource.category === selectedCategory;
-                    return matchesSearch && matchesCategory;
-                });
-    
-                const Card = ({ children }) => (
-                    <div className="bg-white rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                        {children}
-                    </div>
-                );
-    
-                return (
-                    <div className="min-h-screen bg-gray-50">
-                        <div className="max-w-7xl mx-auto px-4 py-8">
-                            {/* Header */}
-                            <div className="mb-8">
-                                <h1 className="text-3xl font-bold text-gray-900">Legal Resources</h1>
-                                <p className="mt-2 text-gray-600">Access our collection of legal documents, acts, and educational materials</p>
-                            </div>
-    
-                            {/* Search and Filter Section */}
-                            <div className="mb-8 flex flex-col md:flex-row gap-4">
-                                <div className="relative flex-1">
-                                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 h-5 w-5" />
-                                    <input
-                                        type="text"
-                                        placeholder="Search resources..."
-                                        className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                        value={searchTerm}
-                                        onChange={(e) => setSearchTerm(e.target.value)}
-                                    />
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <Filter className="text-gray-400 h-5 w-5" />
-                                    <select
-                                        className="border border-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                        value={selectedCategory}
-                                        onChange={(e) => setSelectedCategory(e.target.value)}
-                                    >
-                                        {categories.map(category => (
-                                            <option key={category} value={category}>
-                                                {category.charAt(0).toUpperCase() + category.slice(1)}
-                                            </option>
-                                        ))}
-                                    </select>
-                                </div>
-                            </div>
-    
-                            {/* Resources Grid */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                {filteredResources.map(resource => (
-                                    <Card key={resource.id}>
-                                        <div className="p-6">
-                                            <div className="flex items-start justify-between">
-                                                <div className="flex-1">
-                                                    <div className="flex items-center gap-2 mb-2">
-                                                        <BookOpen className="h-5 w-5 text-blue-500" />
-                                                        <span className="text-sm font-medium text-blue-500">{resource.type}</span>
-                                                    </div>
-                                                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{resource.title}</h3>
-                                                    <p className="text-sm text-gray-600 mb-4">{resource.description}</p>
-                                                    <div className="flex items-center gap-4 text-sm text-gray-500">
-                                                        <span>{resource.size}</span>
-                                                        <span>{new Date(resource.date).toLocaleDateString()}</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <button 
-                                                className="mt-4 w-full flex items-center justify-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition-colors"
-                                                onClick={() => window.open(resource.downloadLink, '_blank')}
-                                            >
-                                                <Download className="h-4 w-4" />
-                                                Download
-                                            </button>
-                                        </div>
-                                    </Card>
-                                ))}
-                            </div>
-    
-                            {filteredResources.length === 0 && (
-                                <div className="text-center py-12">
-                                    <p className="text-gray-600">No resources found matching your search criteria.</p>
-                                </div>
-                            )}
-                        </div>
-                    </div>
-                );
-            };
-    
-            ReactDOM.render(
-                <React.StrictMode>
-                    <ResourcesPage />
-                </React.StrictMode>,
-                document.getElementById('root')
-            );
-        </script>
+    <body
+    class="font-sans bg-slate-150 dark:bg-gradient-to-br from-green-800 to-blue-900 dark:text-white text-teal-900"
+  >
+  <div id="particles-js" class="fixed inset-0"></div>
+
+     
     </body>
 
 <!--Footer Section-->
-<footer class="bg-green-900 py-8">
+<footer class="bg-green-900 py-8 text-white">
     <div class="container mx-auto px-4 text-center">
         <div class="flex flex-wrap justify-center mb-4">
             <a href="#" class="mx-2 hover:text-green-300 transition duration-300"><i
