@@ -101,7 +101,7 @@
         </div>
         <div
           x-show="isOpen"
-          class="md:hidden mt-4 glass-effect rounded-lg p-4"
+          class="md:hidden mt-4 glass-effect rounded-lg p-4  bg-teal-950"
           x-transition:enter="transition ease-out duration-300"
           x-transition:enter-start="opacity-0 transform -translate-y-2"
           x-transition:enter-end="opacity-100 transform translate-y-0"
@@ -109,37 +109,37 @@
           x-transition:leave-start="opacity-100 transform translate-y-0"
           x-transition:leave-end="opacity-0 transform -translate-y-2"
         >
-          <a
-            href="index.html"
-            class="block py-2 hover:text-green-300 transition duration-300"
-            >Home</a
-          >
-          <a
-            href="About.html"
-            class="block py-2 hover:text-green-300 transition duration-300"
-            >About</a
-          >
-          <a
-            href="modules.html"
-            class="block py-2 hover:text-green-300 transition duration-300"
-            >Modules</a
-          >
-          <a
-            href="students.html"
-            class="block py-2 hover:text-green-300 transition duration-300"
-            >Students</a
-          >
+        <a
+        href="index.html"
+        class="block py-2 text-white hover:text-green-300 active:text-orange-900 font-bold transition duration-300"
+        >Home</a
+      >
+      <a
+        href="About.html"
+        class="block py-2 text-white hover:text-green-300 active:text-orange-900 font-bold transition duration-300"
+        >About</a
+      >
+      <a
+        href="modules.html"
+        class="block py-2 text-white hover:text-green-300 active:text-orange-900 font-bold transition duration-300"
+        >Modules</a
+      >
+      <a
+        href="students.html"
+        class="block py-2 text-white hover:text-green-300 active:text-orange-900 font-bold transition duration-300"
+        >Students</a
+      >
+      <a
+      href="resources.html"
+      class="block py-2 text-white hover:text-green-300 active:text-orange-900 font-bold transition duration-300"
+      >Resources</a
+    >
 
-          <a
-          href="resources.html"
-          class="block py-2 hover:text-green-300 transition duration-300"
-          >Resources</a
-        >
-          <a
-            href="Registration.html"
-            class="block py-2 hover:text-green-300 transition duration-300 "
-            >Register</a
-          >
+      <a
+        href="Registration.html"
+        class="block py-2 text-white hover:text-green-300 active:text-orange-900 font-bold transition duration-300"
+        >Register</a
+      >
         </div>
       </nav>
     </header>
@@ -195,7 +195,8 @@
 
       <section id="modules" class="py-20 m-auto md:m-14 sm:m-10">
         <div class="container mx-auto px-4bb">
-          <h2 class="text-4xl font-bold text-center mb-12">Our Modules</h2>
+          <h2 class="text-4xl font-bold text-center ">Our Modules</h2>
+          <p class="text-xl font-medium text-center mb-12">You can enroll to study even one module and earn an accreditated  Professional certificate from hexco</p>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
             <div
@@ -391,7 +392,7 @@
               </p>
               <div class="flex items-center">
                 <img
-                  src="assets/images/students/Caroline Washaya.jpeg"
+                  src="assets/images/students/Caroline Washaya.jpg"
                   width="150px"
                   height="150px"
                   alt="Caroline Washaya-."
@@ -410,7 +411,7 @@
               </p>
               <div class="flex items-center">
                 <img
-                  src="assets/images/students/Kuvarega Munyonga.jpeg"
+                  src="assets/images/students/Kuvarega Munyonga.png"
                   width="150px"
                   height="150px"
                   alt="Kuvarega Manyonga"
@@ -429,7 +430,7 @@
               </p>
               <div class="flex items-center">
                 <img
-                  src="assets/images/students/MoreBrian Mazaza.jpeg"
+                  src="assets/images/students/MoreBrian Mazaza.png"
                   width="150px"
                   height="150px"
                   alt="Morebrian Marara."
@@ -450,7 +451,7 @@
               </p>
               <div class="flex items-center">
                 <img
-                  src="assets/images/students/rumbidzai takawira.jpeg"
+                  src="assets/images/students/rumbidzai takawira.png"
                   width="150px"
                   height="150px"
                   alt="Rumbidzai Takawira."
@@ -467,37 +468,48 @@
 
       </section>
     </main>
+<!--Footer Section-->
+<footer class="bg-teal-900 py-8 text-white ">
+  <div class="container mx-auto px-4 text-center">
 
-    <footer class="bg-teal-900 py-8 text-white">
-      <div class="container mx-auto px-4 text-center">
-        <div class="flex flex-wrap justify-center mb-4">
-          <a href="#" class="mx-2 hover:text-green-300 transition duration-300"
-            ><i class="fab fa-facebook fa-2x"></i
-          ></a>
-          <a href="#" class="mx-2 hover:text-green-300 transition duration-300"
-            ><i class="fab fa-twitter fa-2x"></i
-          ></a>
-          <a href="#" class="mx-2 hover:text-green-300 transition duration-300"
-            ><i class="fab fa-linkedin fa-2x"></i
-          ></a>
-          <a href="#" class="mx-2 hover:text-green-300 transition duration-300"
-            ><i class="fab fa-instagram fa-2x"></i
-          ></a>
-        </div>
-        <p>&copy; 2024 Nature Extend. All rights reserved.</p>
-        <div class="mt-4">
-          <a href="#" class="hover:text-green-300 mx-2 transition duration-300"
-            >Privacy Policy</a
-          >
-          <a href="#" class="hover:text-green-300 mx-2 transition duration-300"
-            >Terms of Service</a
-          >
-          <a href="#" class="hover:text-green-300 mx-2 transition duration-300"
-            >Contact Us</a
-          >
-        </div>
-      </div>
-    </footer>
+    <h3 class="font-bold uppercase">Contact Us</h3>
+    <p>+263 783 656 802 || +263 864 425 2865</p>
+    <p><a href="mail:info@nelc.org">info@nelc.org</a></p>
+
+
+
+    <div class="flex flex-wrap justify-center mb-4">
+      <a href="#" class="mx-2 hover:text-green-300 transition duration-300"
+        ><i class="fab fa-facebook fa-2x"></i
+      ></a>
+      <a href="#" class="mx-2 hover:text-green-300 transition duration-300"
+        ><i class="fab fa-twitter fa-2x"></i
+      ></a>
+      <a href="#" class="mx-2 hover:text-green-300 transition duration-300"
+        ><i class="fab fa-linkedin fa-2x"></i
+      ></a>
+      <a href="#" class="mx-2 hover:text-green-300 transition duration-300"
+        ><i class="fab fa-instagram fa-2x"></i
+      ></a>
+    </div>
+
+<!--
+    <div class="mt-4">
+      <a href="#" class="hover:text-green-300 mx-2 transition duration-300"
+        >Privacy Policy</a
+      >
+      <a href="#" class="hover:text-green-300 mx-2 transition duration-300"
+        >Terms of Service</a
+      >
+      <a href="#" class="hover:text-green-300 mx-2 transition duration-300"
+        >Contact Us</a
+      >
+-->
+      <p class="italic">&copy; 2024 Nature Extant Learning  Centre. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
 
     <script>
       // Particles.js configuration remains the same
