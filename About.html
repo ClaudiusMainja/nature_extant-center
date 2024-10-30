@@ -250,70 +250,92 @@
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
+                <div class="grid grid-cols-4 gap-4 sm:grid-cols-2 lg:grid-cols-4">
                     <!-- Team Member 1 -->
-                    <div class="text-center group" @mouseenter="showTeamInfo = 'sarah'"
+                    <div class="text-center group" @mouseenter="showTeamInfo = 'ever'"
                         @mouseleave="showTeamInfo = null">
                         <div class="relative overflow-hidden rounded-full mx-auto h-48 w-48">
-                            <img src="assets/images/ClaudiusMainja.jpg" alt="Claude"
+                            <img src="assets/images/team/Ever Chinoda.png" alt="Everjoy Chinoda"
                                 class="transform transition-transform duration-500 group-hover:scale-110">
                             <div
                                 class="absolute inset-0 bg-green-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300">
                             </div>
                         </div>
                         <div class="mt-6">
-                            <h3 class="text-xl font-semibold text-gray-900">Claudius Mainja</h3>
-                            <p class="text-lg font-medium text-green-600">Director</p>
-                            <div x-show="showTeamInfo === 'sarah'" x-transition:enter="transition ease-out duration-300"
+                            <h3 class="text-xl font-semibold text-gray-900">Ever Chinoda</h3>
+                            <p class="text-lg font-medium text-green-600">Principal</p>
+                            <div x-show="showTeamInfo === 'ever'" x-transition:enter="transition ease-out duration-300"
                                 x-transition:enter-start="opacity-0 transform translate-y-2"
                                 x-transition:enter-end="opacity-100 transform translate-y-0" class="mt-4 text-gray-600">
-                                20+ years of experience in animal law and advocacy
                             </div>
                         </div>
                     </div>
 
                     <!-- Team Member 2 -->
-                    <div class="text-center group" @mouseenter="showTeamInfo = 'michael'"
+                    <div class="text-center group" @mouseenter="showTeamInfo = 'everson'"
                         @mouseleave="showTeamInfo = null">
                         <div class="relative overflow-hidden rounded-full mx-auto h-48 w-48">
-                            <img src="assets/images/ClaudiusMainja.jpg" alt="Michael Chen"
+                            <img src="assets/images/team/Everson Rwatikunda.png" alt="Everson Rwatikunda"
                                 class="transform transition-transform duration-500 group-hover:scale-110">
                             <div
                                 class="absolute inset-0 bg-green-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300">
                             </div>
                         </div>
                         <div class="mt-6">
-                            <h3 class="text-xl font-semibold text-gray-900">Claude Mainja</h3>
-                            <p class="text-lg font-medium text-green-600">Lead Instructor</p>
-                            <div x-show="showTeamInfo === 'michael'"
+                            <h3 class="text-xl font-semibold text-gray-900">Everson Rwatikunda</h3>
+                            <p class="text-lg font-medium text-green-600">Administrator</p>
+                            <div x-show="showTeamInfo === 'everson'"
                                 x-transition:enter="transition ease-out duration-300"
                                 x-transition:enter-start="opacity-0 transform translate-y-2"
                                 x-transition:enter-end="opacity-100 transform translate-y-0" class="mt-4 text-gray-600">
-                                Former environmental law professor and animal rights advocate
+
                             </div>
                         </div>
                     </div>
 
                     <!-- Team Member 3 -->
-                    <div class="text-center group" @mouseenter="showTeamInfo = 'emma'"
+                    <div class="text-center group" @mouseenter="showTeamInfo = 'takinda'"
                         @mouseleave="showTeamInfo = null">
                         <div class="relative overflow-hidden rounded-full mx-auto h-48 w-48">
-                            <img src="assets/images/ClaudiusMainja.jpg" alt="claude"
+                            <img src="assets/images/team/Takudzwa Nzou.png" alt="Takudzwa Nzou"
                                 class="transform transition-transform duration-500 group-hover:scale-110">
                             <div
                                 class="absolute inset-0 bg-green-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300">
                             </div>
                         </div>
                         <div class="mt-6">
-                            <h3 class="text-xl font-semibold text-gray-900">Claudius Mainja</h3>
-                            <p class="text-lg font-medium text-green-600">Research Director</p>
-                            <div x-show="showTeamInfo === 'emma'" x-transition:enter="transition ease-out duration-300"
+                            <h3 class="text-xl font-semibold text-gray-900">Takudzwa Nzou</h3>
+                            <p class="text-lg font-medium text-green-600">Assistant Law Lecturer</p>
+                            <div x-show="showTeamInfo === 'takunda'" x-transition:enter="transition ease-out duration-300"
                                 x-transition:enter-start="opacity-0 transform translate-y-2"
                                 x-transition:enter-end="opacity-100 transform translate-y-0" class="mt-4 text-gray-600">
-                                Specializing in international animal protection laws
+             
                             </div>
                         </div>
                     </div>
+
+                    <!-- Team Member  -->
+                    <div class="text-center group" @mouseenter="showTeamInfo = 'takunda'"
+                        @mouseleave="showTeamInfo = null">
+                        <div class="relative overflow-hidden rounded-full mx-auto h-48 w-48">
+                            <img src="assets/images/team/Emerge Masiya(lawyer).png" alt="Takudzwa Nzou"
+                                class="transform transition-transform duration-500 group-hover:scale-110">
+                            <div
+                                class="absolute inset-0 bg-green-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300">
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <h3 class="text-xl font-semibold text-gray-900">Emerge Masiya</h3>
+                            <p class="text-lg font-medium text-green-600">International Wildlife Law lecturer
+                            </p>
+                            <div x-show="showTeamInfo === 'takunda'" x-transition:enter="transition ease-out duration-300"
+                                x-transition:enter-start="opacity-0 transform translate-y-2"
+                                x-transition:enter-end="opacity-100 transform translate-y-0" class="mt-4 text-gray-600">
+             
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

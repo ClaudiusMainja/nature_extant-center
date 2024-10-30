@@ -27,8 +27,6 @@
     <link rel="stylesheet" href="resources.css">
   </head>
 
- 
-
     <header
       class="fixed w-full z-10 transition-all duration-300"
       x-data="{ isScrolled: false, isOpen: false }"
@@ -147,9 +145,6 @@
     </header>
 
     <body class="bg-gray-50" >
-
- 
-
   <!-- Hero Section -->
   <div class="relative h-screen bg-green-900">
     <div class="absolute inset-0">
@@ -203,21 +198,8 @@
             </li>
     </div>
 </div>
-
-<script>
-    document.querySelector('.search-box').addEventListener('input', function(e) {
-        const searchTerm = e.target.value.toLowerCase();
-        const cards = document.querySelectorAll('.resource-card');
-        
-        cards.forEach(card => {
-            const text = card.textContent.toLowerCase();
-            card.style.display = text.includes(searchTerm) ? '' : 'none';
-        });
-    });
-</script>
 </body>
   
-<!--Footer Section-->
 <footer class="bg-teal-900 py-8 text-white">
   <div class="container mx-auto px-4 text-center">
     <div class="flex flex-wrap justify-center mb-4">
@@ -248,5 +230,17 @@
     </div>
   </div>
 </footer>
-
 </html>
+
+
+<script>
+  document.querySelector('.search-box').addEventListener('input', function(e) {
+      const searchTerm = e.target.value.toLowerCase();
+      const cards = document.querySelectorAll('.resource-card');
+      
+      cards.forEach(card => {
+          const text = card.textContent.toLowerCase();
+          card.style.display = text.includes(searchTerm) ? '' : 'none';
+      });
+  });
+</script>
