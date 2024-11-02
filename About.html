@@ -250,7 +250,7 @@
                     </p>
                 </div>
 
-                <div class="grid grid-cols-4 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 lg:grid-cols-3">
                     <!-- Team Member 1 -->
                     <div class="text-center group" @mouseenter="showTeamInfo = 'ever'"
                         @mouseleave="showTeamInfo = null">
@@ -326,7 +326,7 @@
                         </div>
                         <div class="mt-6">
                             <h3 class="text-xl font-semibold text-gray-900">Emerge Masiya</h3>
-                            <p class="text-lg font-medium text-green-600">International Wildlife Law lecturer
+                            <p class="text-lg font-medium text-green-600">International Wildlife Law Lecturer
                             </p>
                             <div x-show="showTeamInfo === 'takunda'" x-transition:enter="transition ease-out duration-300"
                                 x-transition:enter-start="opacity-0 transform translate-y-2"
@@ -335,6 +335,50 @@
                             </div>
                         </div>
                     </div>
+
+                                        <!-- Team Member  -->
+                                        <div class="text-center group" @mouseenter="showTeamInfo = 'kudzai'"
+                                        @mouseleave="showTeamInfo = null">
+                                        <div class="relative overflow-hidden rounded-full mx-auto h-48 w-48">
+                                            <img src="assets/images/team/Kudzai Mhepo.png" alt="Kudzai Mhepo"
+                                                class="transform transition-transform duration-500 group-hover:scale-110">
+                                            <div
+                                                class="absolute inset-0 bg-green-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300">
+                                            </div>
+                                        </div>
+                                        <div class="mt-6">
+                                            <h3 class="text-xl font-semibold text-gray-900">Kudzai Mhepo</h3>
+                                            <p class="text-lg font-medium text-green-600">Wildlife Law and Advocacy Lecturer
+                                            </p>
+                                            <div x-show="showTeamInfo === 'takunda'" x-transition:enter="transition ease-out duration-300"
+                                                x-transition:enter-start="opacity-0 transform translate-y-2"
+                                                x-transition:enter-end="opacity-100 transform translate-y-0" class="mt-4 text-gray-600">
+                             
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                                                            <!-- Team Member  -->
+                                                                            <div class="text-center group" @mouseenter="showTeamInfo = 'kudzai'"
+                                                                            @mouseleave="showTeamInfo = null">
+                                                                            <div class="relative overflow-hidden rounded-full mx-auto h-48 w-48">
+                                                                                <img src="assets/images/team/Dr T. Mwedzi.png" alt="Dr. T Mwedzi"
+                                                                                    class="transform transition-transform duration-500 group-hover:scale-110">
+                                                                                <div
+                                                                                    class="absolute inset-0 bg-green-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="mt-6">
+                                                                                <h3 class="text-xl font-semibold text-gray-900">Dr tongai mwedzi ( Ecologist)</h3>
+                                                                                <p class="text-lg font-medium text-green-600">Community Based Wildlife Management Lecturer
+                                                                                </p>
+                                                                                <div x-show="showTeamInfo === 'takunda'" x-transition:enter="transition ease-out duration-300"
+                                                                                    x-transition:enter-start="opacity-0 transform translate-y-2"
+                                                                                    x-transition:enter-end="opacity-100 transform translate-y-0" class="mt-4 text-gray-600">
+                                                                 
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
 
                 </div>
             </div>
