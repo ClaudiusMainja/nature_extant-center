@@ -18,7 +18,8 @@
   <link rel="stylesheet" href="/main.css">
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <link rel="stylesheet" href="reg.js">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
   <link rel="stylesheet" href="footer.css">
 </head>
 
@@ -169,103 +170,433 @@
       </div>
     </div>
 
- 
-    <div class="container mx-auto my-10 max-w-xl p-6 bg-white rounded-lg shadow-lg">
-        <h1 class="text-3xl font-semibold text-center text-gray-800 mb-6">Admissions Application</h1>
-        
-        <form id="applicationForm" action="/submit_application" method="POST" class="space-y-6" onsubmit="return validateForm()">
-            
-            <!-- Personal Information -->
-            <div>
-                <h2 class="text-xl font-semibold text-gray-700 mb-2">Personal Information</h2>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                        <label for="first_name" class="block text-sm font-medium text-gray-700">First Name</label>
-                        <input type="text" id="first_name" name="first_name" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-indigo-200 focus:border-indigo-300">
+        <!-- Previous decorative elements remain the same -->
+        <div class="fixed top-0 left-0 w-full h-2 bg-gradient-to-r from-green-400 to-blue-500"></div>
+        <div class="fixed -z-10 top-0 right-0 w-96 h-96 bg-gradient-to-bl from-green-200/20 to-transparent rounded-full blur-3xl"></div>
+        <div class="fixed -z-10 bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-blue-200/20 to-transparent rounded-full blur-3xl"></div>
+    
+        <div class="min-h-screen py-12 px-4 sm:px-6 lg:px-8 animate__animated animate__fadeIn">
+            <div class="max-w-4xl mx-auto">
+                <!-- Header remains the same -->
+                <div class="text-center mb-12 animate__animated animate__fadeInDown">
+                    <div class="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center">
+                        <i class="fas fa-leaf text-4xl text-white"></i>
                     </div>
-
-                    <div>
-                        <label for="last_name" class="block text-sm font-medium text-gray-700">Last Name</label>
-                        <input type="text" id="last_name" name="last_name" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-indigo-200 focus:border-indigo-300">
+                    <h2 class="text-4xl font-extrabold text-gray-900 mb-4">
+                        Nature Extant Learning Center
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                        Join us in shaping a sustainable future through education and innovation
+                    </p>
+                </div>
+    
+                <!-- Form Status Message -->
+                <div id="formStatus" class="hidden max-w-2xl mx-auto mb-6 p-4 rounded-lg text-center animate__animated animate__fadeIn"></div>
+    
+                <!-- Progress Steps remain the same -->
+                <div class="mb-12 max-w-2xl mx-auto">
+                    <div class="flex justify-between items-center">
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">1</div>
+                            <span class="text-sm mt-2 text-gray-600">Personal Info</span>
+                        </div>
+                        <div class="flex-1 h-1 bg-green-200 mx-4"></div>
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 bg-green-200 rounded-full flex items-center justify-center text-gray-600 font-bold">2</div>
+                            <span class="text-sm mt-2 text-gray-600">Program</span>
+                        </div>
+                        <div class="flex-1 h-1 bg-green-200 mx-4"></div>
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 bg-green-200 rounded-full flex items-center justify-center text-gray-600 font-bold">3</div>
+                            <span class="text-sm mt-2 text-gray-600">Documents</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Contact Information -->
-            <div>
-                <h2 class="text-xl font-semibold text-gray-700 mb-2">Contact Information</h2>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                        <input type="email" id="email" name="email" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-indigo-200 focus:border-indigo-300">
+    
+                <!-- Form -->
+                <form id="applicationForm" action="https://submit-form.com/4iCxpSfX9" method="POST" enctype="multipart/form-data" novalidate>
+                    <div class="space-y-8">
+                        <!-- Personal Information Card -->
+                        <div class="bg-white rounded-2xl shadow-xl p-8 transform hover:scale-[1.01] transition-transform duration-300">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-user text-teal-950 text-xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-900">Personal Information</h3>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                                <div class="relative">
+                                    <label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+                                    <input type="text" name="firstName" id="firstName" required 
+                                        pattern="[A-Za-z\s]{2,}"
+                                        class="block w-full px-4 py-3 rounded-xl border-gray-200 focus:ring-green-500 focus:border-green-500 transition-colors duration-200"
+                                        data-error="Please enter a valid first name (minimum 2 characters, letters only)">
+                                    <div class="error-message hidden text-red-500 text-sm mt-1"></div>
+                                </div>
+    
+                                <div class="relative">
+                                    <label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+                                    <input type="text" name="lastName" id="lastName" required 
+                                        pattern="[A-Za-z\s]{2,}"
+                                        class="block w-full px-4 py-3 rounded-xl border-gray-200 focus:ring-green-500 focus:border-green-500 transition-colors duration-200"
+                                        data-error="Please enter a valid last name (minimum 2 characters, letters only)">
+                                    <div class="error-message hidden text-red-500 text-sm mt-1"></div>
+                                </div>
+    
+                                <div class="relative">
+                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                                    <div class="relative">
+                                        <input type="email" name="email" id="email" required 
+                                            class="block w-full pl-12 pr-4 py-3 rounded-xl border-gray-200 focus:ring-green-500 focus:border-green-500 transition-colors duration-200"
+                                            data-error="Please enter a valid email address">
+                                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                            <i class="fas fa-envelope text-gray-400"></i>
+                                        </div>
+                                    </div>
+                                    <div class="error-message hidden text-red-500 text-sm mt-1"></div>
+                                </div>
+    
+                                <div class="relative">
+                                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                                    <div class="relative">
+                                        <input type="tel" name="phone" id="phone" required 
+                                            pattern="[0-9]{10,}"
+                                            class="block w-full pl-12 pr-4 py-3 rounded-xl border-gray-200 focus:ring-green-500 focus:border-green-500 transition-colors duration-200"
+                                            data-error="Please enter a valid phone number (minimum 10 digits)">
+                                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                            <i class="fas fa-phone text-gray-400"></i>
+                                        </div>
+                                    </div>
+                                    <div class="error-message hidden text-red-500 text-sm mt-1"></div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <!-- Program Selection Card -->
+                        <div class="bg-white rounded-2xl shadow-xl p-8 transform hover:scale-[1.01] transition-transform duration-300">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-graduation-cap text-blue-500 text-xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-900">Program Selection</h3>
+                            </div>
+    
+                            <div class="space-y-6">
+                                <div>
+                                    <label for="program" class="block text-sm font-medium text-gray-700 mb-1">Select Program</label>
+                                    <select name="program" id="program" required 
+                                        class="block w-full px-4 py-3 rounded-xl border-gray-200 focus:ring-green-500 focus:border-green-500 transition-colors duration-200"
+                                        data-error="Please select a program">
+                                        <option value="">Choose a program</option>
+                                        <option value="environmental-science">Environmental Science</option>
+                                        <option value="conservation-biology">Conservation Biology</option>
+                                        <option value="sustainable-agriculture">Sustainable Agriculture</option>
+                                        <option value="wildlife-management">Wildlife Management</option>
+                                    </select>
+                                    <div class="error-message hidden text-red-500 text-sm mt-1"></div>
+                                </div>
+    
+                                <div>
+                                    <label for="startDate" class="block text-sm font-medium text-gray-700 mb-1">Preferred Start Date</label>
+                                    <input type="date" name="startDate" id="startDate" required 
+                                        class="block w-full px-4 py-3 rounded-xl border-gray-200 focus:ring-green-500 focus:border-green-500 transition-colors duration-200"
+                                        data-error="Please select a start date">
+                                    <div class="error-message hidden text-red-500 text-sm mt-1"></div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <!-- Document Upload Card -->
+                        <div class="bg-white rounded-2xl shadow-xl p-8 transform hover:scale-[1.01] transition-transform duration-300">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-file-upload text-purple-500 text-xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-900">Required Documents</h3>
+                            </div>
+    
+                            <div class="space-y-6">
+                                <div class="relative">
+                                    <label for="resume" class="block text-sm font-medium text-gray-700 mb-1">Resume/CV</label>
+                                    <div class="relative">
+                                        <input type="file" name="resume" id="resume" accept=".pdf,.doc,.docx" required 
+                                            class="block w-full text-sm text-gray-500 
+                                            file:mr-4 file:py-3 file:px-4 file:rounded-full file:border-0 
+                                            file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 
+                                            hover:file:bg-green-100 transition-colors duration-200
+                                            focus:outline-none"
+                                            data-error="Please upload your resume (PDF, DOC, or DOCX format)">
+                                    </div>
+                                    <div class="error-message hidden text-red-500 text-sm mt-1"></div>
+                                </div>
+    
+                                <div class="relative">
+                                    <label for="transcript" class="block text-sm font-medium text-gray-700 mb-1">Academic Transcript</label>
+                                    <div class="relative">
+                                        <input type="file" name="transcript" id="transcript" accept=".pdf" required 
+                                            class="block w-full text-sm text-gray-500 
+                                            file:mr-4 file:py-3 file:px-4 file:rounded-full file:border-0 
+                                            file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 
+                                            hover:file:bg-green-100 transition-colors duration-200
+                                            focus:outline-none"
+                                            data-error="Please upload your transcript (PDF format only)">
+                                    </div>
+                                    <div class="error-message hidden text-red-500 text-sm mt-1"></div>
+                                </div>
+    
+                                <div>
+                                    <label for="statement" class="block text-sm font-medium text-gray-700 mb-1">Statement of Purpose</label>
+                                    <textarea name="statement" id="statement" rows="4" required 
+                                        class="block w-full px-4 py-3 rounded-xl border-gray-200 focus:ring-green-500 focus:border-green-500 transition-colors duration-200" 
+                                        placeholder="Please describe your interest in the program and your career goals..."
+                                        data-error="Please enter your statement of purpose (minimum 100 characters)"
+                                        minlength="100"></textarea>
+                                    <div class="error-message hidden text-red-500 text-sm mt-1"></div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <!-- Submit Button -->
+                        <div class="pt-6">
+                            <button type="submit" 
+                                class="w-full flex items-center justify-center py-4 px-6 border border-transparent rounded-xl shadow-lg text-lg font-medium text-white bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transform hover:scale-[1.02] transition-all duration-300">
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                Submit Application
+                            </button>
+                        </div>
                     </div>
-
-                    <div>
-                        <label for="phone" class="block text-sm font-medium text-gray-700">Phone</label>
-                        <input type="tel" id="phone" name="phone" pattern="234-567-8910" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-indigo-200 focus:border-indigo-300" placeholder="234-567-8910"/>
-                    </div>
-                </div>
+                </form>
             </div>
+        </div>
+    
+       <!-- Form Validation -->
 
-            <!-- Academic Background -->
-            <div>
-                <h2 class="text-xl font-semibold text-gray-700 mb-2">Academic Background</h2>
-                
-                <label for="education" class="block text-sm font-medium text-gray-700">Highest Level of Education</label>
-                <input type="text" id="education" name="education" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-indigo-200 focus:border-indigo-300">
-                
-                <label for="institution" class="block text-sm font-medium text-gray-700 mt-4">Institution</label>
-                <input type="text" id="institution" name="institution" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-indigo-200 focus:border-indigo-300">
-            </div>
-
-            <!-- Modules Selection -->
-            <div>
-                <h2 class="text-xl font-semibold text-gray-700 mb-2">Select Modules</h2>
-                <label for="modules" class="block text-sm font-medium text-gray-700">Choose the modules you are interested in:</label>
-                <select id="modules" name="modules[]" multiple required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-indigo-200 focus:border-indigo-300">
-                    <option value="Zimbabwe Wildlife Law & Policy">Zimbabwe Wildlife Law & Policy</option>
-                    <option value="International And Regional Treaties">International And Regional Treaties</option>
-                    <option value="Wildlife Management for Law Officers">Wildlife Management for Law Officers</option>
-                    <option value="Community Based Wildlife Management">Community Based Wildlife Management</option>
-                    <option value="Research Methods">Research Methods</option>
-                    <option value="Wildlife Law Advocacy">Wildlife Law Advocacy</option>
-                    <option value="Intersection Of Wildlife Law">Intersection Of Wildlife Law</option>
-                    <option value="Wildlife Law Enforcement">Wildlife Law Enforcement</option>
-                </select>
-            </div>
-
-            <!-- Statement of Purpose -->
-            <div>
-                <h2 class="text-xl font-semibold text-gray-700 mb-2">Statement of Purpose</h2>
-                <label for="statement" class="block text-sm font-medium text-gray-700">Why are you interested in this program?</label>
-                <textarea id="statement" name="statement" rows="4" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-indigo-200 focus:border-indigo-300" placeholder="Describe your motivations and goals"></textarea>
-            </div>
-
-            <!-- Submit Button -->
-            <div class="text-center">
-                <button type="submit" class="w-full md:w-1/2 px-4 py-2 font-semibold text-white bg-teal-900 rounded-md hover:bg-orange-500 focus:outline-none focus:ring focus:ring-indigo-200">Submit Application</button>
-            </div>
-            
-        </form>
-    </div>
-    </body>
-
-    <!-- JavaScript for validation -->
     <script>
-        function validateForm() {
-            const form = document.getElementById('applicationForm');
-            const modules = document.getElementById('modules');
-            if (modules.selectedOptions.length === 0) {
-                alert('Please select at least one module.');
-                return false;
-            }
-            form.submit();
-            return true;
-        }
-    </script>
+      document.addEventListener('DOMContentLoaded', function() {
+          const form = document.getElementById('applicationForm');
+          const formStatus = document.getElementById('formStatus');
+          const inputs = form.querySelectorAll('input, select, textarea');
+          const progressSteps = document.querySelectorAll('.flex.flex-col.items-center');
 
+          // Function to show error message
+          function showError(input, message) {
+              const errorDiv = input.parentElement.querySelector('.error-message') || 
+                             input.parentElement.parentElement.querySelector('.error-message');
+              errorDiv.textContent = message;
+              errorDiv.classList.remove('hidden');
+              input.classList.add('border-red-500');
+              input.classList.remove('border-gray-200', 'border-green-500');
+          }
+
+          // Function to show success state
+          function showSuccess(input) {
+              const errorDiv = input.parentElement.querySelector('.error-message') || 
+                             input.parentElement.parentElement.querySelector('.error-message');
+              errorDiv.classList.add('hidden');
+              input.classList.remove('border-red-500');
+              input.classList.add('border-green-500');
+          }
+
+          // Function to update progress steps
+          function updateProgress() {
+              const sections = {
+                  personal: ['firstName', 'lastName', 'email', 'phone'],
+                  program: ['program', 'startDate'],
+                  documents: ['resume', 'transcript', 'statement']
+              };
+
+              let currentSection = 1;
+              for (const [section, fields] of Object.entries(sections)) {
+                  const isComplete = fields.every(field => {
+                      const input = form.elements[field];
+                      return input.value && !input.classList.contains('border-red-500');
+                  });
+
+                  if (isComplete) {
+                      progressSteps[currentSection].querySelector('div').classList.remove('bg-green-200');
+                      progressSteps[currentSection].querySelector('div').classList.add('bg-green-500');
+                      progressSteps[currentSection].querySelector('div').classList.add('text-white');
+                  } else {
+                      progressSteps[currentSection].querySelector('div').classList.add('bg-green-200');
+                      progressSteps[currentSection].querySelector('div').classList.remove('bg-green-500');
+                      progressSteps[currentSection].querySelector('div').classList.remove('text-white');
+                  }
+                  currentSection++;
+              }
+          }
+
+          // Validate email format
+          function isValidEmail(email) {
+              const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+              return re.test(email);
+          }
+
+          // Validate phone format
+          function isValidPhone(phone) {
+              const re = /^[0-9]{10,}$/;
+              return re.test(phone.replace(/[^0-9]/g, ''));
+          }
+
+          // Validate file type
+          function isValidFileType(file, acceptedTypes) {
+              const fileType = file.type;
+              const fileExtension = file.name.split('.').pop().toLowerCase();
+              return acceptedTypes.some(type => {
+                  if (type.startsWith('.')) {
+                      return fileExtension === type.substring(1);
+                  }
+                  return fileType.includes(type);
+              });
+          }
+
+          // Real-time validation
+          inputs.forEach(input => {
+              input.addEventListener('input', function() {
+                  validateInput(this);
+                  updateProgress();
+              });
+
+              input.addEventListener('blur', function() {
+                  validateInput(this);
+                  updateProgress();
+              });
+          });
+
+          // Validate individual input
+          function validateInput(input) {
+              const value = input.value.trim();
+
+              // Skip validation if field is empty and not required
+              if (!input.required && !value) {
+                  return true;
+              }
+
+              switch(input.id) {
+                  case 'firstName':
+                  case 'lastName':
+                      if (value.length < 2 || !/^[A-Za-z\s]+$/.test(value)) {
+                          showError(input, input.dataset.error);
+                          return false;
+                      }
+                      break;
+
+                  case 'email':
+                      if (!isValidEmail(value)) {
+                          showError(input, input.dataset.error);
+                          return false;
+                      }
+                      break;
+
+                  case 'phone':
+                      if (!isValidPhone(value)) {
+                          showError(input, input.dataset.error);
+                          return false;
+                      }
+                      break;
+
+                  case 'program':
+                      if (!value) {
+                          showError(input, input.dataset.error);
+                          return false;
+                      }
+                      break;
+
+                  case 'startDate':
+                      const selectedDate = new Date(value);
+                      const today = new Date();
+                      if (!value || selectedDate < today) {
+                          showError(input, 'Please select a future date');
+                          return false;
+                      }
+                      break;
+
+                  case 'resume':
+                      if (input.files.length) {
+                          const file = input.files[0];
+                          if (!isValidFileType(file, ['.pdf', '.doc', '.docx', 'application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'])) {
+                              showError(input, 'Please upload a PDF, DOC, or DOCX file');
+                              return false;
+                          }
+                      }
+                      break;
+
+                  case 'transcript':
+                      if (input.files.length) {
+                          const file = input.files[0];
+                          if (!isValidFileType(file, ['.pdf', 'application/pdf'])) {
+                              showError(input, 'Please upload a PDF file');
+                              return false;
+                          }
+                      }
+                      break;
+
+                  case 'statement':
+                      if (value.length < 100) {
+                          showError(input, 'Please enter at least 100 characters');
+                          return false;
+                      }
+                      break;
+              }
+
+              showSuccess(input);
+              return true;
+          }
+
+          // Form submission
+          form.addEventListener('submit', function(e) {
+              e.preventDefault();
+              let isValid = true;
+
+              // Validate all inputs
+              inputs.forEach(input => {
+                  if (!validateInput(input)) {
+                      isValid = false;
+                  }
+              });
+
+              if (isValid) {
+                  // Show loading state
+                  const submitButton = form.querySelector('button[type="submit"]');
+                  const originalButtonText = submitButton.innerHTML;
+                  submitButton.disabled = true;
+                  submitButton.innerHTML = '<i class="fas fa-circle-notch fa-spin mr-2"></i>Submitting...';
+
+                  // Simulate form submission (replace with actual form submission)
+                  setTimeout(() => {
+                      formStatus.textContent = 'Application submitted successfully! We will contact you soon.';
+                      formStatus.classList.remove('hidden', 'bg-red-100', 'text-red-700');
+                      formStatus.classList.add('bg-green-100', 'text-green-700', 'p-4', 'rounded-lg', 'mb-6');
+                      
+                      // Reset form
+                      form.reset();
+                      inputs.forEach(input => {
+                          input.classList.remove('border-green-500', 'border-red-500');
+                      });
+                      
+                      // Reset submit button
+                      submitButton.disabled = false;
+                      submitButton.innerHTML = originalButtonText;
+                      
+                      // Scroll to top to show success message
+                      formStatus.scrollIntoView({ behavior: 'smooth' });
+                  }, 2000);
+              } else {
+                  // Show error message
+                  formStatus.textContent = 'Please correct the errors in the form.';
+                  formStatus.classList.remove('hidden', 'bg-green-100', 'text-green-700');
+                  formStatus.classList.add('bg-red-100', 'text-red-700', 'p-4', 'rounded-lg', 'mb-6');
+                  
+                  // Scroll to first error
+                  const firstError = form.querySelector('.border-red-500');
+                  if (firstError) {
+                      firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                  }
+              }
+          });
+      });
+  </script>
+</body>
 <!--Footer Section-->
 
 <!-- Footer Container -->
