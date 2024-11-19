@@ -475,6 +475,79 @@
     </main>
   <!--Footer Section-->
 
+  
+
+  <script>
+    // Particles.js configuration remains the same
+
+
+
+    // Scroll indicator
+    window.addEventListener("scroll", () => {
+      const scrollIndicator = document.getElementById("scroll-indicator");
+      const windowHeight = window.innerHeight;
+      const documentHeight =
+        document.documentElement.scrollHeight - windowHeight;
+      const scrolled = window.scrollY;
+      const width = `${(scrolled / documentHeight) * 100}%`;
+      scrollIndicator.style.width = width;
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+          behavior: "smooth",
+        });
+      });
+    });
+
+    // Animate elements on scroll
+    const animateOnScroll = () => {
+      const elements = document.querySelectorAll(".animate-on-scroll");
+      elements.forEach((element) => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementBottom = element.getBoundingClientRect().bottom;
+        if (elementTop < window.innerHeight && elementBottom > 0) {
+          element.classList.add("animate-fade-in");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", animateOnScroll);
+    animateOnScroll(); // Initial check on page load
+
+    // Module card hover effect
+    const moduleCards = document.querySelectorAll(".module-card");
+    moduleCards.forEach((card) => {
+      card.addEventListener("mouseenter", () => {
+        card.style.transform = "translateY(-10px)";
+        card.style.boxShadow = "0 10px 20px rgba(0, 0, 0, 0.2)";
+      });
+      card.addEventListener("mouseleave", () => {
+        card.style.transform = "translateY(0)";
+        card.style.boxShadow = "none";
+      });
+    });
+
+    // Typewriter effect for hero section
+    const heroTitle = document.querySelector(".hero h1");
+    const heroText = heroTitle.textContent;
+    heroTitle.textContent = "";
+    let i = 0;
+    const typeWriter = () => {
+      if (i < heroText.length) {
+        heroTitle.textContent += heroText.charAt(i);
+        i++;
+        setTimeout(typeWriter, 100);
+      }
+    };
+    typeWriter();
+  </script>
+  
+</body>
+
 <!-- Footer Container -->
 <footer class="bg-gradient-to-b from-teal-900 to-teal-950 text-white">
   <div class="max-w-7xl mx-auto px-4 py-12 footer-content">
@@ -575,75 +648,4 @@
   </div>
 </footer>
 
-
-    <script>
-      // Particles.js configuration remains the same
-
-
-
-      // Scroll indicator
-      window.addEventListener("scroll", () => {
-        const scrollIndicator = document.getElementById("scroll-indicator");
-        const windowHeight = window.innerHeight;
-        const documentHeight =
-          document.documentElement.scrollHeight - windowHeight;
-        const scrolled = window.scrollY;
-        const width = `${(scrolled / documentHeight) * 100}%`;
-        scrollIndicator.style.width = width;
-      });
-
-      // Smooth scrolling for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth",
-          });
-        });
-      });
-
-      // Animate elements on scroll
-      const animateOnScroll = () => {
-        const elements = document.querySelectorAll(".animate-on-scroll");
-        elements.forEach((element) => {
-          const elementTop = element.getBoundingClientRect().top;
-          const elementBottom = element.getBoundingClientRect().bottom;
-          if (elementTop < window.innerHeight && elementBottom > 0) {
-            element.classList.add("animate-fade-in");
-          }
-        });
-      };
-
-      window.addEventListener("scroll", animateOnScroll);
-      animateOnScroll(); // Initial check on page load
-
-      // Module card hover effect
-      const moduleCards = document.querySelectorAll(".module-card");
-      moduleCards.forEach((card) => {
-        card.addEventListener("mouseenter", () => {
-          card.style.transform = "translateY(-10px)";
-          card.style.boxShadow = "0 10px 20px rgba(0, 0, 0, 0.2)";
-        });
-        card.addEventListener("mouseleave", () => {
-          card.style.transform = "translateY(0)";
-          card.style.boxShadow = "none";
-        });
-      });
-
-      // Typewriter effect for hero section
-      const heroTitle = document.querySelector(".hero h1");
-      const heroText = heroTitle.textContent;
-      heroTitle.textContent = "";
-      let i = 0;
-      const typeWriter = () => {
-        if (i < heroText.length) {
-          heroTitle.textContent += heroText.charAt(i);
-          i++;
-          setTimeout(typeWriter, 100);
-        }
-      };
-      typeWriter();
-    </script>
-    
-  </body>
 </html>
