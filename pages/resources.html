@@ -1,12 +1,18 @@
-
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth md:scroll-auto">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nature Extant Learning Center</title>
+    <!-- Add proper meta tags in your head section -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="nATURE Extant Learning Center" content="We are a a dedicated educational institute mandated to empowering the next generation of animal law advocates.">
+  
+  <!-- Open Graph tags for social sharing -->
+  <meta property="og:title" content="Nature Extant Learning Center">
+  <meta property="og:description" content=" We are a dedicated educational institute mandated to empowering the next generation of animal law advocates.">
+  <meta property="og:image" content="assets/icon-01.svg">
+    <title>      Nature Extant Learning Center </title>
     <link rel="icon" type="image/x-icon" href="assets/icon-01.svg" >
-    <script src="https://cdn.tailwindcss.com"></script>
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js"
       integrity="sha512-nIwdJlD5/vHj23CbO2iHCXtsqzdTTx3e3uAmpTm4x2Y8xCIFyWu4cSIV8GaGe2UNVq86/1h9EgUZy7tn243qdA=="
@@ -17,131 +23,95 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="/main.css" />
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="resources.css">
-    <link rel="stylesheet" href="footer.css">
+     <!-- Tailwind and External Resources -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="/footer.css">
   </head>
 
-    <header
-      class="fixed w-full z-10 transition-all duration-300"
-      x-data="{ isScrolled: false, isOpen: false }"
-      :class="{ 'bg-white': !isScrolled, 'bg-slate-200 shadow': isScrolled }"
-      @scroll.window="isScrolled = (window.pageYOffset > 20)"
-    >
-      <nav class="container mx-auto px-8 py-2">
-        <div class="flex justify-around items-center">
-          <a href="index.html" class="text-2xl font-bold flex items-center">
-            <img
-              src="assets/images/Transparent logos-02.png"
-              alt="Nature Extant"
-              width="150px"
-              height="150px"
-              class="mr-4 rounded-full justify-left"
-            />
-          </a>
-          <ul
-            class="hidden md:flex space-x-6 text-green-900 font-bold justify-center"
-          >
-            <li>
-              <a
-                href="index.html"
-                class="hover:text-green-300 transition duration-300"
-                >Home</a
-              >
-            </li>
-            <li>
-              <a
-                href="About.html"
-                class="hover:text-green-300 transition duration-300"
-                >About</a
-              >
-            </li>
-            <li>
-              <a
-                href="modules.html"
-                class="hover:text-green-300 transition duration-300"
-                >Modules</a
-              >
-            </li>
-            <li>
-              <a
-                href="students.html"
-                class="hover:text-green-300 transition duration-300"
-                >Students</a
-              >
-            </li>
+ <!---Author: Claudius Mainja-->
 
-            <li>
-                <a
-                  href="resources.html"
-                  class="hover:text-green-300 transition duration-300"
-                  >Resources</a
-                >
-              </li>
-            <li>
-              <a
-                href="Registration.html"
-                class="bg-teal-900 hover:bg-green-400 px-4 py-2 ractangle-full transition duration-300 text-white"
-                >Register</a
-              >
-            </li>
-          </ul>
-          <button
-            @click="isOpen = !isOpen"
-            class="md:hidden  text-teal-900 size-36 focus:outline-none"
-          >
-            <i x-show="!isOpen" class="fas fa-bars"></i>
-            <i x-show="isOpen" class="fas fa-times"></i>
-          </button>
+        <!-- Modern Navbar -->
+    <header class="fixed w-full z-50" x-data="{ open: false, dropdown: false }">
+      <nav class="bg-white/90 backdrop-blur-md shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="flex justify-between h-20">
+            <!-- Logo -->
+            <div class="flex-shrink-0 flex items-center">
+              <img src="assets/images/Transparent logos-02.png" alt="Nature Extant" class="h-16 w-auto"/>
+            </div>
+  
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+              <a href="/index.html" class="text-teal-900 hover:text-green-500 transition-colors">Home</a>
+              <a href="/pages/About.html" class="text-teal-900 hover:text-green-500 transition-colors">About</a>
+              
+              <!-- Programs Dropdown -->
+              <div class="relative" @click.away="dropdown = false">
+                <button @click="dropdown = !dropdown" class="text-teal-900 hover:text-green-500 transition-colors flex items-center">
+                  Programs
+                  <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </button>
+                
+                <div x-show="dropdown" 
+                     class="absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-xl py-2 z-50"
+                     x-transition:enter="transition ease-out duration-200"
+                     x-transition:enter-start="opacity-0 transform -translate-y-2"
+                     x-transition:enter-end="opacity-100 transform translate-y-0">
+                  <a href="/pages/environmental education.html" class="block px-4 py-2 text-teal-900 hover:bg-green-50">Environmental Education</a>
+                  <a href="/pages/animal law advocacy.html" class="block px-4 py-2 text-teal-900 hover:bg-green-50">Animal Law</a>
+                </div>
+              </div>
+              
+              <a href="/pages/students.html" class="text-teal-900 hover:text-green-500 transition-colors">Students</a>
+              <a href="/pages/resources.html" class="text-teal-900 hover:text-green-500 transition-colors">Resources</a>
+              <a href="/pages/Registration.html" class="bg-teal-900 text-white px-6 py-2 rounded-full hover:bg-green-500 transition-colors">Register</a>
+            </div>
+  
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex items-center">
+              <button @click="open = !open" class="text-teal-900">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path :class="{'hidden': open, 'inline-flex': !open }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                  <path :class="{'hidden': !open, 'inline-flex': open }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
-        <div
-          x-show="isOpen"
-          class="md:hidden mt-4  bg-teal-950 glass-effect rounded-lg p-4"
-          x-transition:enter="transition ease-out duration-300"
-          x-transition:enter-start="opacity-0 transform -translate-y-2"
-          x-transition:enter-end="opacity-100 transform translate-y-0"
-          x-transition:leave="transition ease-in duration-300"
-          x-transition:leave-start="opacity-100 transform translate-y-0"
-          x-transition:leave-end="opacity-0 transform -translate-y-2"
-        >
-        <a
-        href="index.html"
-        class="block py-2 text-white hover:text-green-300 active:text-orange-900 font-bold transition duration-300"
-        >Home</a
-      >
-      <a
-        href="About.html"
-        class="block py-2 text-white hover:text-green-300 active:text-orange-900 font-bold transition duration-300"
-        >About</a
-      >
-      <a
-        href="modules.html"
-        class="block py-2 text-white hover:text-green-300 active:text-orange-900 font-bold transition duration-300"
-        >Modules</a
-      >
-      <a
-        href="students.html"
-        class="block py-2 text-white hover:text-green-300 active:text-orange-900 font-bold transition duration-300"
-        >Students</a
-      >
-      <a
-      href="resources.html"
-      class="block py-2 text-white hover:text-green-300 active:text-orange-900 font-bold transition duration-300"
-      >Resources</a
-    >
-
-      <a
-        href="Registration.html"
-        class="block py-2 text-white hover:text-green-300 active:text-orange-900 font-bold transition duration-300"
-        >Register</a
-      >
+  
+        <!-- Mobile Menu -->
+        <div :class="{'block': open, 'hidden': !open}" class="md:hidden bg-white">
+          <div class="px-2 pt-2 pb-3 space-y-1">
+            <a href="/index.html" class="block px-3 py-2 text-teal-900 hover:bg-green-50 rounded-md">Home</a>
+            <a href="/pages/About.html" class="block px-3 py-2 text-teal-900 hover:bg-green-50 rounded-md">About</a>
+            <div x-data="{ programsOpen: false }">
+              <button @click="programsOpen = !programsOpen" class="w-full text-left px-3 py-2 text-teal-900 hover:bg-green-50 rounded-md">
+                Programs
+                <svg class="inline-block ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
+              <div x-show="programsOpen" class="pl-6">
+                <a href="/pages/environmental education.html" class="block px-3 py-2 text-teal-900 hover:bg-green-50">Environmental Education</a>
+                <a href="/pages/animal law advocacy.html" class="block px-3 py-2 text-teal-900 hover:bg-green-50">Animal Advocacy</a>
+              </div>
+            </div>
+            <a href="/pages/students.html" class="block px-3 py-2 text-teal-900 hover:bg-green-50 rounded-md">Students</a>
+            <a href="/pages/resources.html" class="block px-3 py-2 text-teal-900 hover:bg-green-50 rounded-md">Resources</a>
+            <a href="/pages/Registration.html" class="block px-3 py-2 bg-teal-900 text-white rounded-md text-center">Register</a>
+          </div>
         </div>
       </nav>
     </header>

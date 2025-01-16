@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth md:scroll-auto">
+  <head>
+    <!-- Add proper meta tags in your head section -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="nATURE Extant Learning Center" content="We are a a dedicated educational institute mandated to empowering the next generation of animal law advocates.">
+  
+  <!-- Open Graph tags for social sharing -->
+  <meta property="og:title" content="Nature Extant Learning Center">
+  <meta property="og:description" content=" We are a dedicated educational institute mandated to empowering the next generation of animal law advocates.">
+  <meta property="og:image" content="assets/icon-01.svg">
+    <title>      Nature Extant Learning Center </title>
+    <link rel="icon" type="image/x-icon" href="assets/icon-01.svg" >
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js"
+      integrity="sha512-nIwdJlD5/vHj23CbO2iHCXtsqzdTTx3e3uAmpTm4x2Y8xCIFyWu4cSIV8GaGe2UNVq86/1h9EgUZy7tn243qdA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+     <!-- Tailwind and External Resources -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="/footer.css">
+  </head>
+
+ <!---Author: Claudius Mainja-->
+
+        <!-- Modern Navbar -->
+    <header class="fixed w-full z-50" x-data="{ open: false, dropdown: false }">
+      <nav class="bg-white/90 backdrop-blur-md shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="flex justify-between h-20">
+            <!-- Logo -->
+            <div class="flex-shrink-0 flex items-center">
+              <img src="assets/images/Transparent logos-02.png" alt="Nature Extant" class="h-16 w-auto"/>
+            </div>
+  
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+              <a href="/index.html" class="text-teal-900 hover:text-green-500 transition-colors">Home</a>
+              <a href="/pages/About.html" class="text-teal-900 hover:text-green-500 transition-colors">About</a>
+              
+              <!-- Programs Dropdown -->
+              <div class="relative" @click.away="dropdown = false">
+                <button @click="dropdown = !dropdown" class="text-teal-900 hover:text-green-500 transition-colors flex items-center">
+                  Programs
+                  <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </button>
+                
+                <div x-show="dropdown" 
+                     class="absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-xl py-2 z-50"
+                     x-transition:enter="transition ease-out duration-200"
+                     x-transition:enter-start="opacity-0 transform -translate-y-2"
+                     x-transition:enter-end="opacity-100 transform translate-y-0">
+                  <a href="/pages/environmental education.html" class="block px-4 py-2 text-teal-900 hover:bg-green-50">Environmental Education</a>
+                  <a href="/pages/animal law advocacy.html" class="block px-4 py-2 text-teal-900 hover:bg-green-50">Animal Law</a>
+                </div>
+              </div>
+              
+              <a href="/pages/students.html" class="text-teal-900 hover:text-green-500 transition-colors">Students</a>
+              <a href="/pages/resources.html" class="text-teal-900 hover:text-green-500 transition-colors">Resources</a>
+              <a href="/pages/Registration.html" class="bg-teal-900 text-white px-6 py-2 rounded-full hover:bg-green-500 transition-colors">Register</a>
+            </div>
+  
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex items-center">
+              <button @click="open = !open" class="text-teal-900">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path :class="{'hidden': open, 'inline-flex': !open }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                  <path :class="{'hidden': !open, 'inline-flex': open }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Mobile Menu -->
+        <div :class="{'block': open, 'hidden': !open}" class="md:hidden bg-white">
+          <div class="px-2 pt-2 pb-3 space-y-1">
+            <a href="/index.html" class="block px-3 py-2 text-teal-900 hover:bg-green-50 rounded-md">Home</a>
+            <a href="/pages/About.html" class="block px-3 py-2 text-teal-900 hover:bg-green-50 rounded-md">About</a>
+            <div x-data="{ programsOpen: false }">
+              <button @click="programsOpen = !programsOpen" class="w-full text-left px-3 py-2 text-teal-900 hover:bg-green-50 rounded-md">
+                Programs
+                <svg class="inline-block ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
+              <div x-show="programsOpen" class="pl-6">
+                <a href="/pages/environmental education.html" class="block px-3 py-2 text-teal-900 hover:bg-green-50">Environmental Education</a>
+                <a href="/pages/animal law advocacy.html" class="block px-3 py-2 text-teal-900 hover:bg-green-50">Animal Advocacy</a>
+              </div>
+            </div>
+            <a href="/pages/students.html" class="block px-3 py-2 text-teal-900 hover:bg-green-50 rounded-md">Students</a>
+            <a href="/pages/resources.html" class="block px-3 py-2 text-teal-900 hover:bg-green-50 rounded-md">Resources</a>
+            <a href="/pages/Registration.html" class="block px-3 py-2 bg-teal-900 text-white rounded-md text-center">Register</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <body>
+      <div class="container mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="p-4">
+            <h1 class="text-4xl font-bold text-center">Environmental Education</h1>
+            <p class="text-justify">
+              Our environmental education program is designed to provide students with the knowledge and skills to become effective advocates for the environment. We offer a range of courses that cover topics such as climate change, biodiversity, and conservation. Our courses are taught by experts in the field and are designed to be engaging and interactive. Students will have the opportunity to learn about the latest research and developments in environmental science, as well as participate in hands-on activities and field trips. Our goal is to inspire students to take action to protect the environment and create a more sustainable future for all.
+            </p>
+          </div>
+          <div class="p-4">
+            <img src="assets/images/environmental-education.jpg" alt="Environmental Education" class="w-full h-full object-cover"/>
+          </div>
+        </div>
+      </div>

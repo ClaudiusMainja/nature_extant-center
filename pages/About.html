@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth md:scroll-auto">
+  <head>
+    <!-- Add proper meta tags in your head section -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="nATURE Extant Learning Center" content="We are a a dedicated educational institute mandated to empowering the next generation of animal law advocates.">
+  
+  <!-- Open Graph tags for social sharing -->
+  <meta property="og:title" content="Nature Extant Learning Center">
+  <meta property="og:description" content=" We are a dedicated educational institute mandated to empowering the next generation of animal law advocates.">
+  <meta property="og:image" content="assets/icon-01.svg">
+    <title>      Nature Extant Learning Center </title>
+    <link rel="icon" type="image/x-icon" href="assets/icon-01.svg" >
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js"
+      integrity="sha512-nIwdJlD5/vHj23CbO2iHCXtsqzdTTx3e3uAmpTm4x2Y8xCIFyWu4cSIV8GaGe2UNVq86/1h9EgUZy7tn243qdA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+     <!-- Tailwind and External Resources -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.5/cdn.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="/src/footer.css">
+    <link rel="stylesheet" href="/src/about.css">
+  </head>
+
+ <!---Author: Claudius Mainja-->
+
+        <!-- Modern Navbar -->
+    <header class="fixed w-full z-50" x-data="{ open: false, dropdown: false }">
+      <nav class="bg-white/90 backdrop-blur-md shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="flex justify-between h-20">
+            <!-- Logo -->
+            <div class="flex-shrink-0 flex items-center">
+              <img src="/assets/images/Transparent logos-02.png" alt="Nature Extant" class="h-16 w-auto"/>
+            </div>
+  
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+              <a href="/index.html" class="text-teal-900 hover:text-green-500 transition-colors">Home</a>
+              <a href="/pages/About.html" class="text-teal-900 hover:text-green-500 transition-colors">About</a>
+              
+              <!-- Programs Dropdown -->
+              <div class="relative" @click.away="dropdown = false">
+                <button @click="dropdown = !dropdown" class="text-teal-900 hover:text-green-500 transition-colors flex items-center">
+                  Programs
+                  <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </button>
+                
+                <div x-show="dropdown" 
+                     class="absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-xl py-2 z-50"
+                     x-transition:enter="transition ease-out duration-200"
+                     x-transition:enter-start="opacity-0 transform -translate-y-2"
+                     x-transition:enter-end="opacity-100 transform translate-y-0">
+                  <a href="/pages/environmental education.html" class="block px-4 py-2 text-teal-900 hover:bg-green-50">Environmental Education</a>
+                  <a href="/pages/animal law advocacy.html" class="block px-4 py-2 text-teal-900 hover:bg-green-50">Animal Law</a>
+                </div>
+              </div>
+              
+              <a href="/pages/students.html" class="text-teal-900 hover:text-green-500 transition-colors">Students</a>
+              <a href="/pages/resources.html" class="text-teal-900 hover:text-green-500 transition-colors">Resources</a>
+              <a href="/pages/Registration.html" class="bg-teal-900 text-white px-6 py-2 rounded-full hover:bg-green-500 transition-colors">Register</a>
+            </div>
+  
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex items-center">
+              <button @click="open = !open" class="text-teal-900">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path :class="{'hidden': open, 'inline-flex': !open }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                  <path :class="{'hidden': !open, 'inline-flex': open }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Mobile Menu -->
+        <div :class="{'block': open, 'hidden': !open}" class="md:hidden bg-white">
+          <div class="px-2 pt-2 pb-3 space-y-1">
+            <a href="/index.html" class="block px-3 py-2 text-teal-900 hover:bg-green-50 rounded-md">Home</a>
+            <a href="/pages/About.html" class="block px-3 py-2 text-teal-900 hover:bg-green-50 rounded-md">About</a>
+            <div x-data="{ programsOpen: false }">
+              <button @click="programsOpen = !programsOpen" class="w-full text-left px-3 py-2 text-teal-900 hover:bg-green-50 rounded-md">
+                Programs
+                <svg class="inline-block ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
+              <div x-show="programsOpen" class="pl-6">
+                <a href="/pages/environmental education.html" class="block px-3 py-2 text-teal-900 hover:bg-green-50">Environmental Education</a>
+                <a href="/pages/animal law advocacy.html" class="block px-3 py-2 text-teal-900 hover:bg-green-50">Animal Advocacy</a>
+              </div>
+            </div>
+            <a href="/pages/students.html" class="block px-3 py-2 text-teal-900 hover:bg-green-50 rounded-md">Students</a>
+            <a href="/pages/resources.html" class="block px-3 py-2 text-teal-900 hover:bg-green-50 rounded-md">Resources</a>
+            <a href="/pages/Registration.html" class="block px-3 py-2 bg-teal-900 text-white rounded-md text-center">Register</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <body>
+      
+ 
+          <!-- Hero Section -->
+          <div class="relative h-screen bg-green-900">
+              <div class="absolute inset-0">
+                  <img src="/assets/images/aboutsec.jpg" alt="Nature Background" class="w-full h-full object-cover opacity-40">
+              </div>
+              <div class="relative flex items-center justify-center h-full  content-center -py-24">
+                  <div class="text-center" x-data="{ shown: false }" x-init="setTimeout(() => shown = true, 500)">
+                      <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl transition-all duration-1000"
+                          :class="shown ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'">
+                          About Nature Extant
+                      </h1>
+                      <p class="mt-6 text-xl text-gray-200 transition-all duration-1000 delay-300"
+                          :class="shown ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'">
+                          Pioneering the Future of environmental education and Animal Law
+                      </p>
+                      <a href="#about" class="mt-8 inline-block animate-bounce cursor-pointer">
+                          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                          </svg>
+                      </a>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Who We Are Section -->
+          <div id="about" class="py-16 bg-teal-950">
+              <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                      <div class="transition-all duration-1000"
+                          :class="shown ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'">
+                          <h2 class="text-3xl font-bold text-white sm:text-4xl mb-6">Who We Are</h2>
+                          <p class="text-lg text-white mb-4">
+                            We are an Environmental Learning Centre , a dedicated learning facility promoting environmental awareness, education, and sustainable practices. The Centre targets schools, professions, communities especially the ones in fragile settings, and local organizations to address environmental challenges such as deforestation, climate change, water scarcity, and waste management which are posing harm to wildlife, people and the environment itself. The Centre  offers educative workshops, modern professional intensive training programs, and hands-on activities to empower individuals with knowledge and skills to protect the environment thus it ushers a formal qualification to individuals partaking the highlighted focus areas.  We align with Zimbabwe’s national environmental policies and the United Nations Sustainable Development Goals (SDGs), particularly SDG 13 (Climate Action), SDG 15 (Life on Land), and SDG 4 (Quality Education).
+                          </p>
+                     
+                      </div>
+                      <div class="relative transition-all duration-1000 bg-white"
+                          :class="shown ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'">
+                          <img src="/assets/images/aboutnature.png" alt="Nature Extend Campus"
+                              class="rounded-lg shadow-xl w-full transform transition hover:scale-105 duration-300">
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Mission Section -->
+          <div class="py-16 bg-gray-50">
+              <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+                  <div class="text-center ">
+                      <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl mb-6">Our Mission</h2>
+                      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Empowering individuals through education to become effective environmental stewards
+                      </p>
+                  </div>
+
+                  <div class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                      <!-- Education Card -->
+                      <div class="bg-white rounded-lg shadow-lg p-8 transition duration-300 hover:-translate-y-2">
+                          <div class="text-center ">
+                              <h3 class="text-xl font-semibold text-gray-900 mb-4">Education</h3>
+                              <p class="text-gray-600">
+                                  Providing comprehensive Environmental education and Animal Law through innovative teaching methods and
+                                  real-world case studies.
+                              </p>
+                          </div>
+                      </div>
+
+                      <!-- Advocacy Card -->
+                      <div class="bg-white rounded-lg shadow-lg p-8 transition duration-300 hover:-translate-y-2">
+                          <div class="text-center">
+                              <h3 class="text-xl font-semibold text-gray-900 mb-4">Advocacy</h3>
+                              <p class="text-gray-600">
+                                  Training future leaders to effectively advocate for animal protection in legal and
+                                  policy contexts.
+                              </p>
+                          </div>
+                      </div>
+
+                      <!-- Research Card -->
+                      <div class="bg-white rounded-lg shadow-lg p-8 transition duration-300 hover:-translate-y-2">
+                          <div class="text-center">
+                              <h3 class="text-xl font-semibold text-gray-900 mb-4">Research</h3>
+                              <p class="text-gray-600">
+                                  Conducting groundbreaking research to advance animal law and inform policy decisions.
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+<!--Our Team-->
+<section class="py-20 px-4 max-w-7xl mx-auto">
+  <!-- Header Section -->
+  <div class="text-center mb-16 section-header">
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Meet Our Expert Team
+      </h2>
+    
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Dedicated professionals leading the way in Environmental Education and Animal Law
+      </p>
+  </div>
+
+  <!-- Featured Team Members (Top 3) -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+      <!-- Ever Chinoda -->
+      <div class="featured-card team-card bg-white rounded-2xl overflow-hidden">
+          <div class="image-wrapper aspect-[3/4]">
+              <img src="/assets/images/team/Ever Chinoda.png" 
+                   alt="Ever Chinoda" 
+                   class="w-full h-full object-cover">
+              <div class="content-overlay"></div>
+          </div>
+          <div class="p-6">
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">Ever Chinoda</h3>
+              <p class="text-green-600 font-medium mb-3">Principal</p>
+              <p class="text-gray-600">Leading our vision for environmental education and animal law.</p>
+          </div>
+      </div>
+
+      <!-- Everson Rwatikunda -->
+      <div class="featured-card team-card bg-white rounded-2xl overflow-hidden">
+          <div class="image-wrapper aspect-[3/4]">
+              <img src="/assets/images/team/Everson Rwatikunda.png" 
+                   alt="Everson Rwatikunda" 
+                   class="w-full h-full object-cover">
+              <div class="content-overlay"></div>
+          </div>
+          <div class="p-6">
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">Everson Rwatikunda</h3>
+              <p class="text-green-600 font-medium mb-3">Administrator</p>
+              <p class="text-gray-600">Managing our operations and ensuring smooth administration.</p>
+          </div>
+      </div>
+
+      <!-- Takudzwa Nzou -->
+      <div class="featured-card team-card bg-white rounded-2xl overflow-hidden">
+          <div class="image-wrapper aspect-[3/4]">
+              <img src="/assets/images/team/Takudzwa Nzou.png" 
+                   alt="Takudzwa Nzou" 
+                   class="w-full h-full object-cover">
+              <div class="content-overlay"></div>
+          </div>
+          <div class="p-6">
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">Takudzwa Nzou</h3>
+              <p class="text-green-600 font-medium mb-3">Assistant Law Lecturer</p>
+              <p class="text-gray-600">Shaping the next generation of environmental lawyers.</p>
+          </div>
+      </div>
+  </div>
+
+  <!-- Regular Team Members (Bottom 4) -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Emerge Masiya -->
+      <div class="team-card bg-white rounded-2xl overflow-hidden">
+          <div class="image-wrapper aspect-[3/4]">
+              <img src="/assets/images/team/Emerge Masiya(lawyer).png" 
+                   alt="Emerge Masiya" 
+                   class="w-full h-full object-cover">
+              <div class="content-overlay"></div>
+          </div>
+          <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Emerge Masiya</h3>
+              <p class="text-green-600 font-medium mb-3">International Wildlife Law Lecturer</p>
+              <p class="text-gray-600">Expert in international wildlife protection laws.</p>
+          </div>
+      </div>
+
+      <!-- Kudzai Mhepo -->
+      <div class="team-card bg-white rounded-2xl overflow-hidden">
+          <div class="image-wrapper aspect-[3/4]">
+              <img src="/assets/images/team/Kudzai Mhepo.png" 
+                   alt="Kudzai Mhepo" 
+                   class="w-full h-full object-cover">
+              <div class="content-overlay"></div>
+          </div>
+          <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Kudzai Mhepo</h3>
+              <p class="text-green-600 font-medium mb-3">Wildlife Law and Advocacy Lecturer</p>
+              <p class="text-gray-600">Championing wildlife protection through law and advocacy.</p>
+          </div>
+      </div>
+
+      <!-- Dr. A Jeke -->
+      <div class="team-card bg-white rounded-2xl overflow-hidden">
+          <div class="image-wrapper aspect-[3/4]">
+              <img src="/assets/images/team/Dr A. Jeke( ecologist).png" 
+                   alt="Dr. A Jeke" 
+                   class="w-full h-full object-cover">
+              <div class="content-overlay"></div>
+          </div>
+          <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Dr. A Jeke</h3>
+              <p class="text-green-600 font-medium mb-3">Wildlife Management for Law Officers Lecturer</p>
+              <p class="text-gray-600">Bridging the gap between wildlife management and law enforcement.</p>
+          </div>
+      </div>
+
+      <!-- Dr. T Mwedzi -->
+      <div class="team-card bg-white rounded-2xl overflow-hidden">
+          <div class="image-wrapper aspect-[3/4]">
+              <img src="/assets/images/team/Dr T. Mwedzi.png" 
+                   alt="Dr. T Mwedzi" 
+                   class="w-full h-full object-cover">
+              <div class="content-overlay"></div>
+          </div>
+          <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Dr. T Mwedzi</h3>
+              <p class="text-green-600 font-medium mb-3">Community Based Wildlife Management Lecturer</p>
+              <p class="text-gray-600">Empowering communities through wildlife management education.</p>
+          </div>
+      </div>
+  </div>
+</section>
+
+<script>
+  // Initialize GSAP
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Animate header
+  gsap.to('.section-header', {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      scrollTrigger: {
+          trigger: '.section-header',
+          start: 'top bottom-=100',
+      }
+  });
+
+  // Animate featured cards
+  gsap.to('.featured-card', {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      stagger: 0.2,
+      scrollTrigger: {
+          trigger: '.featured-card',
+          start: 'top bottom-=50',
+      }
+  });
+
+  // Animate regular team cards
+  const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+              setTimeout(() => {
+                  entry.target.classList.add('visible');
+              }, index * 100);
+              observer.unobserve(entry.target);
+          }
+      });
+  }, {
+      threshold: 0.1
+  });
+
+  document.querySelectorAll('.team-card:not(.featured-card)').forEach(card => {
+      observer.observe(card);
+  });
+</script>
+    </body>
+<!-- Footer Container -->
+<footer class="bg-gradient-to-b from-teal-900 to-teal-950 text-white">
+  <div class="max-w-7xl mx-auto px-4 py-12 footer-content">
+    <!-- Main Footer Content -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Logo Section -->
+      <div class="flex flex-col space-y-4">
+        <div class="flex items-center space-x-3 group cursor-pointer">
+          <div class="w-48 h-48 bg-white rounded overflow-hidden transform transition-transform group-hover:scale-110">
+            <img 
+              src="/assets/images/Transparent logos-02.png" 
+              alt="Nature Extant Logo" 
+              class="w-full h-full object-cover"
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- About Section -->
+      <div class="transform hover:-translate-y-1 transition-transform duration-300">
+        <h3 class="text-lg font-semibold mb-4 text-teal-400">About Us</h3>
+        <p class="text-md hover:text-white transition-colors">
+          We are a dedicated educational institute mandated to empowering the next generation of animal law advocates. 
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4 text-teal-400">Quick Links</h3>
+        <ul class="space-y-2 text-md">
+          <li>
+            <a href="mailto:info@natureextant.com" target="_blank" class="quick-link hover:text-teal-400 transition-colors">Careers</a>
+          </li>
+          <li>
+            <a href="/pages/About.html" class="quick-link hover:text-teal-400 transition-colors">About</a>
+          </li>
+          <li>
+            <a href="/pages/programs.html" class="quick-link hover:text-teal-400 transition-colors">Our Modules</a>
+          </li>
+          <li>
+            <a href="/pages/students.html" class="quick-link hover:text-teal-400 transition-colors">Our Student Stories</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact Details -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4 text-teal-400">Contact Us</h3>
+        <div class="space-y-4 text-md">
+          <div class="contact-item flex items-center space-x-2 hover:text-teal-400 cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            <div>
+              <p>+263 783 656 802</p>
+              <p>+263 864 425 2865</p>
+            </div>
+          </div>
+          <div class="contact-item flex items-center space-x-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <a href="mailto:info@natureextant.com" target="_blank" class="hover:text-teal-400 transition-colors">
+              info@natureextant.com
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Copyright and Social Links -->
+    <div class="mt-12 pt-8 border-t border-teal-800">
+      <div class="flex flex-col sm:flex-row justify-between items-center text-md text-white">
+        <p class="hover:text-teal-400 transition-colors cursor-pointer">Designed and developed by <a href="www.claudius-mainja" target="_blank" >Claudius Mainja</a></p>
+        <div class="flex space-x-6 mt-4 sm:mt-0">
+          <!-- Facebook Icon -->
+          <a href="https://www.facebook.com/profile.php?id=61568998945243" target="_blank" class="social-icon hover:text-teal-400 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+            </svg>
+          </a>
+
+          <!-- Instagram Icon -->
+          <a href="https://www.facebook.com/profile.php?id=61568998945243" target="_blank" class="social-icon hover:text-teal-400 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+          <!-- LinkedIn Icon -->
+          <a href="https://www.linkedin.com/company/105676539/admin/dashboard/" target="_blank" class="social-icon hover:text-teal-400 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </html>

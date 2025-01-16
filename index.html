@@ -12,7 +12,7 @@
   <meta property="og:image" content="assets/icon-01.svg">
     <title>      Nature Extant Learning Center </title>
     <link rel="icon" type="image/x-icon" href="assets/icon-01.svg" >
-    <script src="https://cdn.tailwindcss.com"></script>
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js"
       integrity="sha512-nIwdJlD5/vHj23CbO2iHCXtsqzdTTx3e3uAmpTm4x2Y8xCIFyWu4cSIV8GaGe2UNVq86/1h9EgUZy7tn243qdA=="
@@ -23,529 +23,326 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="/main.css" />
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="footer.css">
+     <!-- Tailwind and External Resources -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="/footer.css">
   </head>
 
  <!---Author: Claudius Mainja-->
 
-    <header
-      class="fixed w-full z-10 transition-all duration-300"
-      x-data="{ isScrolled: false, isOpen: false }"
-      :class="{ 'bg-white': !isScrolled, 'bg-slate-200 shadow': isScrolled }"
-      @scroll.window="isScrolled = (window.pageYOffset > 20)"
-    >
-      <nav class="container mx-auto px-8 py-2">
-        <div class="flex justify-around items-center">
-          <a href="/index.html" class="text-2xl font-bold flex items-center">
-            <img
-              src="assets/images/Transparent logos-02.png"
-              alt="Nature Extant"
-              width="150px"
-              height="150px"
-              class="mr-4 rounded-lg justify-left"
-            />
-          </a>
-          <ul
-            class="hidden md:flex space-x-6 text-green-900 font-bold justify-center"
-          >
-            <li>
-              <a
-                href="index.html"
-                class="hover:text-green-300 transition duration-300"
-                >Home</a
-              >
-            </li>
-            <li>
-              <a
-                href="About.html"
-                class="hover:text-green-300 transition duration-300"
-                >About</a
-              >
-            </li>
-            <li>
-              <a
-                href="modules.html"
-                class="hover:text-green-300 transition duration-300"
-                >Modules</a
-              >
-            </li>
-            <li>
-              <a
-                href="students.html"
-                class="hover:text-green-300 transition duration-300"
-                >Students</a
-              >
-            </li>
-
-            <li>
-              <a
-                href="resources.html"
-                class="hover:text-green-300 transition duration-300"
-                >Resources</a
-              >
-            </li>
-            <li>
-              <a
-                href="Registration.html"
-                class="bg-teal-900 hover:bg-green-400 px-4 py-2 ractangle-full transition duration-300 text-white"
-                >Register</a
-              >
-            </li>
-          </ul>
-          <button
-            @click="isOpen = !isOpen"
-            class="md:hidden  text-teal-900 size-36 focus:outline-none"
-          >
-            <i x-show="!isOpen" class="fas fa-bars"></i>
-            <i x-show="isOpen" class="fas fa-times"></i>
-          </button>
+        <!-- Modern Navbar -->
+    <header class="fixed w-full z-50" x-data="{ open: false, dropdown: false }">
+      <nav class="bg-white/90 backdrop-blur-md shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="flex justify-between h-20">
+            <!-- Logo -->
+            <div class="flex-shrink-0 flex items-center">
+              <img src="assets/images/Transparent logos-02.png" alt="Nature Extant" class="h-16 w-auto"/>
+            </div>
+  
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+              <a href="/index.html" class="text-teal-900 hover:text-green-500 transition-colors">Home</a>
+              <a href="/pages/About.html" class="text-teal-900 hover:text-green-500 transition-colors">About</a>
+              
+              <!-- Programs Dropdown -->
+              <div class="relative" @click.away="dropdown = false">
+                <button @click="dropdown = !dropdown" class="text-teal-900 hover:text-green-500 transition-colors flex items-center">
+                  Programs
+                  <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </button>
+                
+                <div x-show="dropdown" 
+                     class="absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-xl py-2 z-50"
+                     x-transition:enter="transition ease-out duration-200"
+                     x-transition:enter-start="opacity-0 transform -translate-y-2"
+                     x-transition:enter-end="opacity-100 transform translate-y-0">
+                  <a href="/pages/environmental education.html" class="block px-4 py-2 text-teal-900 hover:bg-green-50">Environmental Education</a>
+                  <a href="/pages/animal law advocacy.html" class="block px-4 py-2 text-teal-900 hover:bg-green-50">Animal Law</a>
+                </div>
+              </div>
+              
+              <a href="/pages/students.html" class="text-teal-900 hover:text-green-500 transition-colors">Students</a>
+              <a href="/pages/resources.html" class="text-teal-900 hover:text-green-500 transition-colors">Resources</a>
+              <a href="/pages/Registration.html" class="bg-teal-900 text-white px-6 py-2 rounded-full hover:bg-green-500 transition-colors">Register</a>
+            </div>
+  
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex items-center">
+              <button @click="open = !open" class="text-teal-900">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path :class="{'hidden': open, 'inline-flex': !open }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                  <path :class="{'hidden': !open, 'inline-flex': open }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
-        <div
-          x-show="isOpen"
-          class="md:hidden mt-4 glass-effect rounded-lg p-4  bg-teal-950"
-          x-transition:enter="transition ease-out duration-300"
-          x-transition:enter-start="opacity-0 transform -translate-y-2"
-          x-transition:enter-end="opacity-100 transform translate-y-0"
-          x-transition:leave="transition ease-in duration-300"
-          x-transition:leave-start="opacity-100 transform translate-y-0"
-          x-transition:leave-end="opacity-0 transform -translate-y-2"
-        >
-        <a
-        href="index.html"
-        class="block py-2 text-white hover:text-green-300 active:text-orange-900 font-bold transition duration-300"
-        >Home</a
-      >
-      <a
-        href="About.html"
-        class="block py-2 text-white hover:text-green-300 active:text-orange-900 font-bold transition duration-300"
-        >About</a
-      >
-      <a
-        href="modules.html"
-        class="block py-2 text-white hover:text-green-300 active:text-orange-900 font-bold transition duration-300"
-        >Modules</a
-      >
-      <a
-        href="students.html"
-        class="block py-2 text-white hover:text-green-300 active:text-orange-900 font-bold transition duration-300"
-        >Students</a
-      >
-      <a
-      href="resources.html"
-      class="block py-2 text-white hover:text-green-300 active:text-orange-900 font-bold transition duration-300"
-      >Resources</a
-    >
-
-      <a
-        href="Registration.html"
-        class="block py-2 text-white hover:text-green-300 active:text-orange-900 font-bold transition duration-300"
-        >Register</a
-      >
+  
+        <!-- Mobile Menu -->
+        <div :class="{'block': open, 'hidden': !open}" class="md:hidden bg-white">
+          <div class="px-2 pt-2 pb-3 space-y-1">
+            <a href="/index.html" class="block px-3 py-2 text-teal-900 hover:bg-green-50 rounded-md">Home</a>
+            <a href="/pages/About.html" class="block px-3 py-2 text-teal-900 hover:bg-green-50 rounded-md">About</a>
+            <div x-data="{ programsOpen: false }">
+              <button @click="programsOpen = !programsOpen" class="w-full text-left px-3 py-2 text-teal-900 hover:bg-green-50 rounded-md">
+                Programs
+                <svg class="inline-block ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
+              <div x-show="programsOpen" class="pl-6">
+                <a href="/pages/environmental education.html" class="block px-3 py-2 text-teal-900 hover:bg-green-50">Environmental Education</a>
+                <a href="/pages/animal law advocacy.html" class="block px-3 py-2 text-teal-900 hover:bg-green-50">Animal Advocacy</a>
+              </div>
+            </div>
+            <a href="/pages/students.html" class="block px-3 py-2 text-teal-900 hover:bg-green-50 rounded-md">Students</a>
+            <a href="/pages/resources.html" class="block px-3 py-2 text-teal-900 hover:bg-green-50 rounded-md">Resources</a>
+            <a href="/pages/Registration.html" class="block px-3 py-2 bg-teal-900 text-white rounded-md text-center">Register</a>
+          </div>
         </div>
       </nav>
     </header>
 
     <body
-    class="font-sans bg-slate-150 dark:bg-gradient-to-br from-green-800 to-blue-900 dark:text-white text-teal-900"
+    class="montserrat bg-slate-150 dark:bg-gradient-to-br from-green-800 to-blue-900 dark:text-white text-teal-900"
   >
-  <div id="particles-js" class="fixed inset-0"></div>
-      <section
-        class="hero h-screen flex flex-wrap justify-center content-center items-center py-4 relative overflow-hidden bg-gradient-to-br from-green-800 to-blue-900 text:white"
-      >
-        <div class="container p-20  justify-items-center items-center py-14 relative z-[1] mx-12 w-3/4 md:container md:w-3/4 ">
-          <h1
-            class="text-4xl md:text-7xl font-black mb-8 leading-tight text-pretty text-center text-white"
-          >
-     We Are Empowering <span>Animal Advocates </span>
-          </h1>
-          <p class="text-xl md:text-2xl mb-12 text-center text-wrap text-white">
-            Join our community of passionate experts and shape the future of
-            animal law
-          </p>
-          <div class="justify-items-center">
-          <a
-            href="Registration.html"
-            class="bg-slate-300 hover:bg-green-400 text-teal-950 hover:text-white font-bold py-3 px-8 ractangle-full text-lg transition duration-300 transform hover:scale-105 inline-block align-middle"
-            >Start Your Journey</a
-          >
-        </div class="text-nowrap">
-        </div>
-        
-        <div class="absolute inset-0 z-0">
-          <img
-            src="assets/images/MainHero.png"
-            alt="Hero Background"
-            id="bg"
-            class="w-full h-full object-cover bg-no-repeat opacity-60"
-          />
-        </div>
-      </section>
-
-      <section id="about" class="py-10 md:py-20 bg-teal-950">
-        <div class="container mx-auto px-4">
-          <h2 class="text-4xl font-bold text-center mb-12 text-orange-100">
-            Who We Are
-          </h2>
-          <div class="max-w-4xl mx-auto glass-effect rounded-lg p-8">
-            <p class="text-lg leading-relaxed text-center text-slate-50">
-              Nature Extant Learning Centre is a dedicated educational institute mandated to empowering the next generation of animal law advocates. The institute offers comprehensive programs which combine theoretical knowledge with practical skills to prepare you for a successful career in animal law. With expert faculty and a global network, we're committed to making a lasting impact on animal welfare and conservation.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section id="modules" class="py-20 m-auto md:m-14 sm:m-10">
-        <div class="container mx-auto px-4bb">
-          <h2 class="text-4xl font-bold text-center ">Our Modules</h2>
-          <p class="text-xl font-medium text-center mb-12">You can enroll to study even one module and earn an accreditated  Professional certificate from HEXCO</p>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-            <div
-              class="bg-orange-100 glass-effect dark:bg-inherit rounded-lg overflow-hidden transform transition duration-300 hover:scale-105"
-            >
-              <img
-                src="assets/images/lawandpolicy.png"
-                alt="Zimbabwe Wildlife"
-                class="w-full h-48 object-cover" 
-              />
-              <div class="p-6">
-                <h3 class="font-bold text-xl mb-2">
-                  Zimbabwe Wildlife Law & Policy
-                </h3>
-                <p class="dark:text-gray-300">
-                  Explore the legal framework governing wildlife conservation in Zimbabwe.
-                </p>
-              </div>
-            </div>
-
-            <div
-              class="bg-orange-100 glass-effect dark:bg-inherit rounded-lg overflow-hidden transform transition duration-300 hover:scale-105"
-            >
-              <img
-                src="assets/images/treaties.png"
-                alt="International Treaties"
-                class="w-full h-48 object-cover" 
-              />
-              <div class="p-6">
-                <h3 class="font-bold text-xl mb-2">
-                  International And Regional Treaties
-                </h3>
-                <p class="dark:text-gray-300">
-                  Understand key international agreements protecting wildlife and biodiversity.
-                </p>
-              </div>
-            </div>
-
-            <div
-              class="bg-orange-100 glass-effect dark:bg-inherit rounded-lg overflow-hidden transform transition duration-300 hover:scale-105"
-            >
-              <img
-                src="assets/images/wildlife mnagement.png"
-                alt="Wildlife Management" 
-                class="w-full h-48 object-cover"
-              />
-              <div class="p-6">
-                <h3 class="font-bold text-xl mb-2">
-                  Wildlife Management for Law Officers
-                </h3>
-                <p class="dark:text-gray-300">
-                  Learn essential wildlife management principles for effective law enforcement
-                </p>
-              </div>
-            </div>
-
-            <div
-              class="bg-orange-100 glass-effect dark:bg-inherit rounded-lg overflow-hidden transform transition duration-300 hover:scale-105"
-            >
-              <img
-                src="assets/images/Community Based Wildlife Management.png"
-                alt="Community Based Wildlife Management"
-                class="w-full h-48 object-cover" 
-              />
-              <div class="p-6">
-                <h3 class="font-bold text-xl mb-2">
-                  Community Based Wildlife Management
-                </h3>
-                <p class="dark:text-gray-300">
-                  Discover strategies for engaging local communities in wildlife conservation efforts.
-                </p>
-              </div>
-            </div>
-
-            <div
-              class="bg-orange-100 glass-effect dark:bg-inherit rounded-lg overflow-hidden transform transition duration-300 hover:scale-105"
-            >
-              <img
-                src="assets/images/Research Methods.png"
-                alt="Research Methods"
-                class="w-full h-48 object-cover" 
-              />
-              <div class="p-6">
-                <h3 class="font-bold text-xl mb-2">Research Methods</h3>
-                <p class="dark:text-gray-300">
-                  Develop skills in conducting and analyzing wildlife law research.
-                </p>
-              </div>
-            </div>
-
-            <div
-              class="bg-orange-100 glass-effect dark:bg-inherit rounded-lg overflow-hidden transform transition duration-300 hover:scale-105"
-            >
-              <img
-                src="assets/images/Wildlife Law Advocacy.png"
-                alt="Wildlife Law Advocacy"
-                class="w-full h-48 object-cover" 
-              />
-              <div class="p-6">
-                <h3 class="font-bold text-xl mb-2">Wildlife Law Advocacy</h3>
-                <p class="dark:text-gray-300">
-                  Learn effective techniques for advocating wildlife protection through legal channels.
-                </p>
-              </div>
-            </div>
-
-            <div
-              class="bg-orange-100 glass-effect dark:bg-inherit rounded-lg overflow-hidden transform transition duration-300 hover:scale-105"
-            >
-              <img
-                src="assets/images/Intersection Of Wildlife Law.png"
-                alt="Intersection Of Wildlife Law"
-                class="w-full h-48 object-cover" 
-              />
-              <div class="p-6">
-                <h3 class="font-bold text-xl mb-2">
-                  Intersection Of Wildlife Law
-                </h3>
-                <p class="dark:text-gray-300">
-                  Explore how wildlife law interacts with other legal domains and social issues.
-                </p>
-              </div>
-            </div>
-
-            <div
-              class="bg-orange-100 glass-effect dark:bg-inherit rounded-lg overflow-hidden transform transition duration-300 hover:scale-105"
-            >
-              <img
-                src="assets/images/Wildlife Law Enforcement.png"
-                alt="Wildlife Law Enforcement"
-                class="w-full h-48 object-cover" 
-              />
-              <div class="p-6">
-                <h3 class="font-bold text-xl mb-2">Wildlife Law Enforcement</h3>
-                <p class="dark:text-gray-300">
-                  Study practical aspects of enforcing wildlife protection laws and regulations.
-                </p>
-              </div>
-            </div>
-
-            <div
-              class="bg-orange-100 glass-effect dark:bg-inherit rounded-lg overflow-hidden transform transition duration-300 hover:scale-105"
-            >
-              <img
-                src="assets/images/Assistant Lecturer Program.png"
-                alt="Assistant Lecturer Program"
-                class="w-full h-48 object-cover" 
-              />
-              <div class="p-6">
-                <h3 class="font-bold text-xl mb-2">
-                  Assistant Lecturer Program
-                </h3>
-                <p class="dark:text-gray-300">
-                  Critical analysis through practical research, developing research and problem-solving skills
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="register" class="py-20 relative overflow-hidden bg-teal-900 glass-effect">
-        <div class="container mx-auto px-4 relative z-10 ">
-          <div
-            class="max-w-6xl mx-auto text-center rounded-lg p-8"
-          >
-            <h2 class="text-4xl font-bold mb-6 text-white">Ready to Make a Difference?</h2>
-            <p class="text-xl mb-8 text-white">
-              Join our next cohort and start your journey in animal law advocacy
-            </p>
-            <a
-              href="Registration.html"
-              class="bg-orange-500 hover:bg-green-400 text-white font-bold py-3 px-8 ractangle-full text-lg transition duration-300 transform hover:scale-105 inline-block"
-              >Register Now</a
-            >
-          </div>
-        </div>
-      </section>
-
-      <section id="students" class="py-20 m-auto md:m-14 sm:m-10">
-        <div class="container m-auto px-4">
-          <h2 class="text-4xl font-bold text-center mb-12">
-            Our Student Stories
-          </h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-orange-50 dark:bg-inherit glass-effect rounded-lg p-6">
-              <p class="mb-4 text-lg">
-                "I took the program because having worked for Zimbabwe Parks and Wildlife Management Authority as a Public Relations Manager for 8 years, I have the knowledge but no paper to show for it.The modules match perfectly the experience I acquired over the year.I don't regret joining the program only wish it had been started way back."
-              </p>
-              <div class="flex items-center">
-                <img
-                  src="assets/images/students/Caroline Washaya.jpg"
-                  width="150px"
-                  height="150px"
-                  alt="Caroline Washaya-."
-                  class="rounded-lg mr-4" 
-                />
-                <div>
-                  <p class="font-semibold">Caroline Washaya-Moyo</p>
-                  <p class="text-sm text-teal-900 dark:text-white">Journalist</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-orange-50 dark:bg-inherit glass-effect rounded-lg p-6">
-              <p class="mb-4 text-lg">
-                "I took a lifetime learning decision to pursue the wildlife law studies offered by Nature Extant learning Centre because my role in the multi billion dollar wildlife industry will NEVER be the same. These studies will definitely make me well equipped with skills,  understanding  and requisite  knowledge in dealing with all wildlife matters as a wildlife law officer"
-              </p>
-              <div class="flex items-center">
-                <img
-                  src="assets/images/students/Kuvarega Munyonga.png"
-                  width="150px"
-                  height="150px"
-                  alt="Kuvarega Manyonga"
-                  class="rounded-lg mr-4" 
-                />
-                <div>
-                  <p class="font-semibold">Kuvarega Manyonga</p>
-                  <p class="text-sm text-teal-900 dark:text-gray-300">Security Officer</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-orange-50 dark:bg-inherit glass-effect rounded-lg p-6">
-              <p class="mb-4 text-lg">
-                "It has motivated me to pursue animal law with ardent zeal. The curriculum package is rich in legal education, equipping one with knowledge and skills enough to advocate for animal welfare and conservation. The learning process leaves you with a transformed mindset, making you a person with a definite goal to make the earth a better place for animals"
-              </p>
-              <div class="flex items-center">
-                <img
-                  src="assets/images/students/Phonos Nyakudya.png"
-                  width="150px"
-                  height="150px"
-                  alt="Morebrian Marara."
-                  class="rounded-lg mr-4" 
-                />
-                <div>
-                  <p class="font-semibold">Phonos Nyakudya</p>
-                  <p class="text-sm text-teal-900 dark:text-gray-300">-SOFA Legal Officer</p>
-                </div>
-              </div>
-            </div>
-
-        
-
-            <div class="bg-orange-50 dark:bg-inherit glass-effect rounded-lg p-6">
-              <p class="mb-4 text-lg">
-                "This diploma has elevated my journalism, empowering me to drive meaningful conversations and advocate for effective wildlife conservation practices, ultimately contributing to a better future where nature and humans thrive in harmony"
-              </p>
-              <div class="flex items-center">
-                <img
-                  src="assets/images/students/rumbidzai takawira.png"
-                  width="150px"
-                  height="150px"
-                  alt="Rumbidzai Takawira."
-                  class="rounded-lg mr-4" 
-                />
-                <div>
-                  <p class="font-semibold">Rumbidzai Takawira</p>
-                  <p class="text-sm text-teal-900 dark:text-gray-300">Journalist (conservation conversation)</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </section>
-    </main>
-  <!--Footer Section-->
-
+    <!-- Hero Section -->
   
+      <section class="relative min-h-screen bg-gradient-to-br from-green-800 to-blue-900 flex items-center pt-16">
+          <!-- Background effects -->
+          <div class="absolute inset-0 bg-[radial-gradient(circle,rgba(0,255,128,0.1)_0%,rgba(0,0,255,0.1)_100%)] animate-pulse"></div>
+          
+          <!-- Background image -->
+          <div class="absolute inset-0 transform hover:scale-105 transition-transform duration-1000">
+              <img 
+                  src="assets/images/Community Based Wildlife Management.png" 
+                  alt="Environmental Education Background" 
+                  class="w-full h-full object-cover opacity-30"
+                  loading="eager"
+              >
+          </div>
+          
+          <!-- Floating elements -->
+          <div class="absolute inset-0 overflow-hidden">
+              <div class="absolute top-1/4 left-1/4 w-4 h-4 bg-white rounded-full opacity-20 animate-float"></div>
+              <div class="absolute top-1/3 right-1/3 w-6 h-6 bg-green-400 rounded-full opacity-20 animate-float"></div>
+              <div class="absolute bottom-1/4 left-1/2 w-3 h-3 bg-blue-400 rounded-full opacity-20 animate-float"></div>
+          </div>
+          
+          <!-- Content -->
+          <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+              <div class="max-w-4xl mx-auto lg:mx-0 text-center lg:text-left">
+                  <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-6 animate-fade-in-up">
+                      <span class="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-400">
+                          Empowering Environmental Leaders of Tomorrow
+                      </span>
+                  </h1>
+                  
+                  <p class="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 animate-fade-in-up-delayed">
+                      Join our community of passionate experts and shape the future of environmental education and animal law advocacy.
+                  </p>
+                  
+                  <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up-delayed">
+                      <a href="/Registration.html" target="_blank"
+                         class="inline-block bg-orange-500 text-white font-bold px-8 py-4 rounded-full text-lg 
+                                hover:bg-green-400 transition-all transform hover:scale-105 hover:shadow-lg 
+                                focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
+                          Register Now
+                      </a>
+                      
+                      <a href="/About.html" target="_blank"
+                         class="inline-block bg-transparent border-2 border-white text-white font-bold px-8 py-4 
+                                rounded-full text-lg hover:bg-white hover:text-green-800 transition-all transform 
+                                hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-white 
+                                focus:ring-offset-2">
+                          Who We Are
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </section>
 
-  <script>
-    // Particles.js configuration remains the same
 
+  <!-- Preload important assets -->
+  <link rel="preload" as="image" href="/assets/images/Transparent logos-02.png">
 
+  <!-- About Section -->
+  <section id="about" class="py-24 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto text-center fade-in">
+        <h2 class="text-4xl font-bold text-teal-900 mb-8">Who We Are</h2>
+        <p class="text-lg text-gray-700 leading-relaxed mb-12">
+          We are an Environmental Learning Centre, a dedicated facility promoting environmental awareness, education, and sustainable practices. We target schools, professionals, and communities in fragile settings to address critical environmental challenges. Through modern professional training programs and hands-on activities, we empower individuals with the knowledge and skills needed to protect our environment.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+          <div class="p-6 rounded-xl bg-green-50 hover:shadow-lg transition-all">
+            <h3 class="text-xl font-bold text-teal-900 mb-4">Our Mission</h3>
+            <p class="text-gray-700">Empowering individuals through education to become effective environmental stewards</p>
+          </div>
+          <div class="p-6 rounded-xl bg-green-50 hover:shadow-lg transition-all">
+            <h3 class="text-xl font-bold text-teal-900 mb-4">Our Impact</h3>
+            <p class="text-gray-700">Aligning with SDGs to create meaningful environmental change</p>
+          </div>
+          <div class="p-6 rounded-xl bg-green-50 hover:shadow-lg transition-all">
+            <h3 class="text-xl font-bold text-teal-900 mb-4">Our Approach</h3>
+            <p class="text-gray-700">Combining theoretical knowledge with practical, hands-on experience</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    // Scroll indicator
-    window.addEventListener("scroll", () => {
-      const scrollIndicator = document.getElementById("scroll-indicator");
-      const windowHeight = window.innerHeight;
-      const documentHeight =
-        document.documentElement.scrollHeight - windowHeight;
-      const scrolled = window.scrollY;
-      const width = `${(scrolled / documentHeight) * 100}%`;
-      scrollIndicator.style.width = width;
-    });
+  <!-- Programs Section -->
+  <section id="programs" class="py-24 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center text-teal-900 mb-16">Our Programs</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <!-- Environmental Education Programs -->
+        <div class="program-card bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300">
+          <img src="assets/images/Environmetal-education.png" alt="Environmental Education" class="w-full h-64 object-cover"/>
+          <div class="p-8">
+            <h3 class="text-2xl font-bold text-teal-900 mb-4">Environmental Education</h3>
+            <p class="text-gray-700 mb-6">Comprehensive programs focusing on sustainability, conservation, and environmental management.</p>
+            <a href="/pages/environmental education.html" class="inline-block bg-teal-900 text-white px-6 py-3 rounded-full hover:bg-green-500 transition-colors">
+              Learn More
+            </a>
+          </div>
+        </div>
 
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
-          behavior: "smooth",
-        });
-      });
-    });
+        <!-- Animal Law Programs -->
+        <div class="program-card bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300">
+          <img src="assets/images/animal-law.png" alt="Animal Law" class="w-full h-64 object-cover"/>
+          <div class="p-8">
+            <h3 class="text-2xl font-bold text-teal-900 mb-4">Animal Law</h3>
+            <p class="text-gray-700 mb-6">Specialized courses in animal welfare, wildlife protection, and environmental law.</p>
+            <a href="/pages/animal law advocacy.html" class="inline-block bg-teal-900 text-white px-6 py-3 rounded-full hover:bg-green-500 transition-colors">
+              Learn More
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    // Animate elements on scroll
-    const animateOnScroll = () => {
-      const elements = document.querySelectorAll(".animate-on-scroll");
-      elements.forEach((element) => {
-        const elementTop = element.getBoundingClientRect().top;
-        const elementBottom = element.getBoundingClientRect().bottom;
-        if (elementTop < window.innerHeight && elementBottom > 0) {
-          element.classList.add("animate-fade-in");
-        }
-      });
-    };
+  <!-- Student Stories Section -->
+  <section id="students" class="py-24 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center text-teal-900 mb-16">Our Student Stories</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div x-data="{ current: 0 }" class="relative">
+          <!-- Testimonial Cards -->
+          <div class="space-y-8">
+            <template x-for="(testimonial, index) in [
+              {
+                name: 'Caroline Washaya-Moyo',
+                role: 'Journalist',
+                image: 'assets/images/students/Caroline Washaya.jpg',
+                quote: 'I took the program because having worked for Zimbabwe Parks and Wildlife Management Authority as a Public Relations Manager for 8 years, I have the knowledge but no paper to show for it.'
+              },
+              {
+                name: 'Kuvarega Manyonga',
+                role: 'Security Officer',
+                image: 'assets/images/students/Kuvarega Munyonga.png',
+                quote: 'I took a lifetime learning decision to pursue the wildlife law studies offered by Nature Extant learning Centre because my role in the multi billion dollar wildlife industry will NEVER be the same.'
+              }
+            ]" :key="index">
+              <div x-show="current === index" 
+              class="bg-white rounded-2xl shadow-lg p-8 transition-all duration-300"
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 transform translate-y-4"
+                x-transition:enter-end="opacity-100 transform translate-y-0">
+                <div class="flex items-center mb-6">
+                  <img :src="testimonial.image" :alt="testimonial.name" class="w-20 h-20 rounded-full object-cover mr-4"/>
+                  <div>
+                    <h3 class="text-xl font-bold text-teal-900" x-text="testimonial.name"></h3>
+                    <p class="text-gray-600" x-text="testimonial.role"></p>
+                  </div>
+                </div>
+                <p class="text-gray-700 italic" x-text="testimonial.quote"></p>
+              </div>
+            </template>
+            
+            <!-- Navigation Dots -->
+            <div class="flex justify-center space-x-2 mt-6">
+              <button @click="current = 0" :class="{'bg-teal-900': current === 0, 'bg-gray-300': current !== 0}" class="w-3 h-3 rounded-full transition-colors"></button>
+              <button @click="current = 1" :class="{'bg-teal-900': current === 1, 'bg-gray-300': current !== 1}" class="w-3 h-3 rounded-full transition-colors"></button>
+            </div>
+          </div>
+        </div>
 
-    window.addEventListener("scroll", animateOnScroll);
-    animateOnScroll(); // Initial check on page load
+        <div x-data="{ current: 0 }" class="relative">
+          <!-- Second Set of Testimonials -->
+          <div class="space-y-8">
+            <template x-for="(testimonial, index) in [
+              {
+                name: 'Phonos Nyakudya',
+                role: 'SOFA Legal Officer',
+                image: 'assets/images/students/Phonos Nyakudya.png',
+                quote: 'It has motivated me to pursue animal law with ardent zeal. The curriculum package is rich in legal education, equipping one with knowledge and skills enough to advocate for animal welfare and conservation.'
+              },
+              {
+                name: 'Rumbidzai Takawira',
+                role: 'Journalist (conservation conversation)',
+                image: 'assets/images/students/rumbidzai takawira.png',
+                quote: 'This diploma has elevated my journalism, empowering me to drive meaningful conversations and advocate for effective wildlife conservation practices.'
+              }
+            ]" :key="index">
+              <div x-show="current === index" 
+                class="bg-white rounded-2xl shadow-lg p-8 transition-all duration-300"
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 transform translate-y-4"
+                x-transition:enter-end="opacity-100 transform translate-y-0">
+                <div class="flex items-center mb-6">
+                  <img :src="testimonial.image" :alt="testimonial.name" class="w-20 h-20 rounded-full object-cover mr-4"/>
+                  <div>
+                    <h3 class="text-xl font-bold text-teal-900" x-text="testimonial.name"></h3>
+                    <p class="text-gray-600" x-text="testimonial.role"></p>
+                  </div>
+                </div>
+                <p class="text-gray-700 italic" x-text="testimonial.quote"></p>
+              </div>
+            </template>
+            
+            <!-- Navigation Dots -->
+            <div class="flex justify-center space-x-2 mt-6">
+              <button @click="current = 0" :class="{'bg-teal-900': current === 0, 'bg-gray-300': current !== 0}" class="w-3 h-3 rounded-full transition-colors"></button>
+              <button @click="current = 1" :class="{'bg-teal-900': current === 1, 'bg-gray-300': current !== 1}" class="w-3 h-3 rounded-full transition-colors"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    // Module card hover effect
-    const moduleCards = document.querySelectorAll(".module-card");
-    moduleCards.forEach((card) => {
-      card.addEventListener("mouseenter", () => {
-        card.style.transform = "translateY(-10px)";
-        card.style.boxShadow = "0 10px 20px rgba(0, 0, 0, 0.2)";
-      });
-      card.addEventListener("mouseleave", () => {
-        card.style.transform = "translateY(0)";
-        card.style.boxShadow = "none";
-      });
-    });
+  <!-- Call to Action Section -->
+  <section class="py-24 bg-gradient-to-br from-green-800 to-blue-900 relative overflow-hidden">
+    <div class="absolute inset-0 bg-black/20"></div>
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold text-white mb-8">Ready to Make a Difference?</h2>
+        <p class="text-xl text-white/90 mb-12">Join our next cohort and start your journey in environmental education and animal law advocacy.</p>
+        <a href="Registration.html" class="inline-block bg-white text-teal-900 font-bold px-8 py-4 rounded-full text-lg hover:bg-green-400 hover:text-white transition-all transform hover:scale-105">
+          Register Now
+        </a>
+      </div>
+    </div>
+  </section>
 
-    // Typewriter effect for hero section
-    const heroTitle = document.querySelector(".hero h1");
-    const heroText = heroTitle.textContent;
-    heroTitle.textContent = "";
-    let i = 0;
-    const typeWriter = () => {
-      if (i < heroText.length) {
-        heroTitle.textContent += heroText.charAt(i);
-        i++;
-        setTimeout(typeWriter, 100);
-      }
-    };
-    typeWriter();
-  </script>
-  
 </body>
 
 <!-- Footer Container -->
@@ -647,5 +444,94 @@
     </div>
   </div>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
 
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Initialize particles.js
+    particlesJS('particles-js', {
+      particles: {
+        number: {
+          value: 80,
+          density: {
+            enable: true,
+            value_area: 800
+          }
+        },
+        color: {
+          value: '#ffffff'
+        },
+        opacity: {
+          value: 0.5,
+          random: false
+        },
+        size: {
+          value: 3,
+          random: true
+        },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: '#ffffff',
+          opacity: 0.4,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 2,
+          direction: 'none',
+          random: false,
+          straight: false,
+          out_mode: 'out',
+          bounce: false
+        }
+      },
+      interactivity: {
+        detect_on: 'canvas',
+        events: {
+          onhover: {
+            enable: true,
+            mode: 'grab'
+          },
+          onclick: {
+            enable: true,
+            mode: 'push'
+          },
+          resize: true
+        }
+      },
+      retina_detect: true
+    });
+  </script>
 </html>

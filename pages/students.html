@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth md:scroll-auto">
+  <head>
+    <!-- Add proper meta tags in your head section -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="nATURE Extant Learning Center" content="We are a a dedicated educational institute mandated to empowering the next generation of animal law advocates.">
+  
+  <!-- Open Graph tags for social sharing -->
+  <meta property="og:title" content="Nature Extant Learning Center">
+  <meta property="og:description" content=" We are a dedicated educational institute mandated to empowering the next generation of animal law advocates.">
+  <meta property="og:image" content="assets/icon-01.svg">
+    <title>      Nature Extant Learning Center </title>
+    <link rel="icon" type="image/x-icon" href="assets/icon-01.svg" >
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js"
+      integrity="sha512-nIwdJlD5/vHj23CbO2iHCXtsqzdTTx3e3uAmpTm4x2Y8xCIFyWu4cSIV8GaGe2UNVq86/1h9EgUZy7tn243qdA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+     <!-- Tailwind and External Resources -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="/footer.css">
+  </head>
+
+ <!---Author: Claudius Mainja-->
+
+        <!-- Modern Navbar -->
+    <header class="fixed w-full z-50" x-data="{ open: false, dropdown: false }">
+      <nav class="bg-white/90 backdrop-blur-md shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="flex justify-between h-20">
+            <!-- Logo -->
+            <div class="flex-shrink-0 flex items-center">
+              <img src="assets/images/Transparent logos-02.png" alt="Nature Extant" class="h-16 w-auto"/>
+            </div>
+  
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+              <a href="/index.html" class="text-teal-900 hover:text-green-500 transition-colors">Home</a>
+              <a href="/pages/About.html" class="text-teal-900 hover:text-green-500 transition-colors">About</a>
+              
+              <!-- Programs Dropdown -->
+              <div class="relative" @click.away="dropdown = false">
+                <button @click="dropdown = !dropdown" class="text-teal-900 hover:text-green-500 transition-colors flex items-center">
+                  Programs
+                  <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </button>
+                
+                <div x-show="dropdown" 
+                     class="absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-xl py-2 z-50"
+                     x-transition:enter="transition ease-out duration-200"
+                     x-transition:enter-start="opacity-0 transform -translate-y-2"
+                     x-transition:enter-end="opacity-100 transform translate-y-0">
+                  <a href="/pages/environmental education.html" class="block px-4 py-2 text-teal-900 hover:bg-green-50">Environmental Education</a>
+                  <a href="/pages/animal law advocacy.html" class="block px-4 py-2 text-teal-900 hover:bg-green-50">Animal Law</a>
+                </div>
+              </div>
+              
+              <a href="/pages/students.html" class="text-teal-900 hover:text-green-500 transition-colors">Students</a>
+              <a href="/pages/resources.html" class="text-teal-900 hover:text-green-500 transition-colors">Resources</a>
+              <a href="/pages/Registration.html" class="bg-teal-900 text-white px-6 py-2 rounded-full hover:bg-green-500 transition-colors">Register</a>
+            </div>
+  
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex items-center">
+              <button @click="open = !open" class="text-teal-900">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path :class="{'hidden': open, 'inline-flex': !open }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                  <path :class="{'hidden': !open, 'inline-flex': open }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Mobile Menu -->
+        <div :class="{'block': open, 'hidden': !open}" class="md:hidden bg-white">
+          <div class="px-2 pt-2 pb-3 space-y-1">
+            <a href="/index.html" class="block px-3 py-2 text-teal-900 hover:bg-green-50 rounded-md">Home</a>
+            <a href="/pages/About.html" class="block px-3 py-2 text-teal-900 hover:bg-green-50 rounded-md">About</a>
+            <div x-data="{ programsOpen: false }">
+              <button @click="programsOpen = !programsOpen" class="w-full text-left px-3 py-2 text-teal-900 hover:bg-green-50 rounded-md">
+                Programs
+                <svg class="inline-block ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
+              <div x-show="programsOpen" class="pl-6">
+                <a href="/pages/environmental education.html" class="block px-3 py-2 text-teal-900 hover:bg-green-50">Environmental Education</a>
+                <a href="/pages/animal law advocacy.html" class="block px-3 py-2 text-teal-900 hover:bg-green-50">Animal Advocacy</a>
+              </div>
+            </div>
+            <a href="/pages/students.html" class="block px-3 py-2 text-teal-900 hover:bg-green-50 rounded-md">Students</a>
+            <a href="/pages/resources.html" class="block px-3 py-2 text-teal-900 hover:bg-green-50 rounded-md">Resources</a>
+            <a href="/pages/Registration.html" class="block px-3 py-2 bg-teal-900 text-white rounded-md text-center">Register</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <body>
+
+<section >
+    
+        <!-- Hero Section -->
+        <div class="relative h-screen bg-green-900">
+            <div class="absolute inset-0">
+                <img src="assets/images/homebg.png" alt="Nature Background" class="w-full h-full object-cover opacity-40 ">
+            </div>
+            <div class="relative flex items-center justify-center h-full  content-center ">
+                <div class="text-center" x-data="{ shown: false }" x-init="setTimeout(() => shown = true, 500)">
+                    <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl transition-all duration-1000"
+                        :class="shown ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'">
+                       Our Current Student Stories
+                    </h1>
+                    <p class="mt-6 text-xl text-gray-200 transition-all duration-1000 delay-300"
+                        :class="shown ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'">
+                      Listen to our Alumni and current student stories and how they have been impacted
+                    </p>
+                    <a href="#students" class="mt-8 inline-block animate-bounce cursor-pointer">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+       <section id="students" class="py-20 m-auto md:m-14 sm:m-10">
+        <div class="container m-auto px-4">
+          <h2 class="text-4xl font-bold text-center mb-12 text-teal-900 dark:text-white">
+            Our Student Stories
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-orange-50 dark:bg-inherit glass-effect rounded-lg p-6">
+              <p class="mb-4 text-lg">
+                "I took the program because having worked for Zimbabwe Parks and Wildlife Management Authority as a Public Relations Manager for 8 years, I have the knowledge but no paper to show for it.The modules match perfectly the experience I acquired over the year.I don't regret joining the program only wish it had been started way back."
+              </p>
+              <div class="flex items-center">
+                <img
+                  src="assets/images/students/Caroline Washaya.jpg"
+                  width="150px"
+                  height="150px"
+                  alt="Caroline Washaya-."
+                  class="rounded-lg mr-4"
+                />
+                <div>
+                  <p class="font-semibold">Caroline Washaya-Moyo</p>
+                  <p class="text-sm text-teal-900 dark:text-white">Journalist </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-orange-50 dark:bg-inherit glass-effect rounded-lg p-6">
+              <p class="mb-4 text-lg">
+                " I took a lifetime learning decision to pursue the wildlife law studies offered by Nature Extant learning Centre because my role in the multi billion dollar wildlife industry will NEVER be the same. These studies will definitely make me well equipped with skills, understanding  and requisite  knowledge in dealing with all wildlife matters as a wildlife law officer "
+              </p>
+              <div class="flex items-center">
+                <img
+                  src="assets/images/students/Kuvarega Munyonga.png"
+                  width="150px"
+                  height="150px"
+                  alt="Kuvarega Manyonga"
+                  class="rounded-lg mr-4"
+                />
+                <div>
+                  <p class="font-semibold">Kuvarega Manyonga</p>
+                  <p class="text-sm text-teal-900 dark:text-gray-300">Wildlife Law Officer</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-orange-50 dark:bg-inherit glass-effect rounded-lg p-6">
+              <p class="mb-4 text-lg">
+                "I have been a volunteer in conservation work for close to a decade now, testament to my love and passion for nature.  Through Nature Extant, I feel legally capacitated and guided in my work and community, protecting ecologically sensetive areas."
+              </p>
+              <div class="flex items-center">
+                <img
+                  src="assets/images/students/MoreBrian Mazaza.png"
+                  width="150px"
+                  height="150px"
+                  alt="Morebrian Marara."
+                  class="rounded-lg mr-4"
+                />
+                <div>
+                  <p class="font-semibold">Morebrian Marara</p>
+                  <p class="text-sm text-teal-900 dark:text-gray-300">-Manyame Conservation Trust</p>
+                </div>
+              </div>
+            </div>
+
+        
+            
+            <div class="bg-orange-50 dark:bg-inherit glass-effect rounded-lg p-6">
+              <p class="mb-4 text-lg">
+                "It has motivated me to pursue animal law with ardent zeal. The curriculum package is rich in legal education, equipping one with knowledge and skills enough to advocate for animal welfare and conservation. The learning process leaves you with a transformed mindset, making you a person with a definite goal to make the earth a better place for animals"
+              </p>
+              <div class="flex items-center">
+                <img
+                  src="assets/images/students/Phonos Nyakudya.png"
+                  width="150px"
+                  height="150px"
+                  alt="phonos Nyakudya"
+                  class="rounded-lg mr-4"
+                />
+                <div>
+                  <p class="font-semibold">Phonos Nyakudya</p>
+                  <p class="text-sm text-teal-900 dark:text-gray-300">SOFA Legal Officer</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-orange-50 dark:bg-inherit glass-effect rounded-lg p-6">
+              <p class="mb-4 text-lg">
+                "The curriculum is thoughtfully designed, blending theoretical knowledge with practical advocacy skills, empowering students to make a real impact in our communities. I am proud to be part of a program that prioritizes sustainable management and protection of our invaluable wildlife heritage.."
+              </p>
+              <div class="flex items-center">
+                <img
+                  src="assets/images/students/Victor Marambi.png"
+                  width="150px"
+                  height="150px"
+                  alt="Victor Marambi"
+                  class="rounded-lg mr-4"
+                />
+                <div>
+                  <p class="font-semibold">Victor Marambi</p>
+                  <p class="text-sm text-teal-900 dark:text-gray-300">-Lawyer (Jiti Law Chambers)</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-orange-50 dark:bg-inherit glass-effect rounded-lg p-6">
+              <p class="mb-4 text-lg">
+                "As a Head Law Enforcement for Umfurudzi Park,  I realised that we were losing a lot of cases in court due to limited knowledge in Wildlife Law. I realised that to bridge that gap I have to enroll for a National Diploma in Wildlife Law and Policy. So far the modules taught has prepared me with the necessary ammunition to defend our Wildlife and speak out for them"
+              </p>
+              <div class="flex items-center">
+                <img
+                  src="assets/images/students/Innocent Mupedze.png"
+                  width="150px"
+                  height="150px"
+                  alt="Innocent Mupedze"
+                  class="rounded-lg mr-4"
+                />
+                <div>
+                  <p class="font-semibold">Innocent Mupedze</p>
+                  <p class="text-sm text-teal-900 dark:text-gray-300">Umpfurudzi park</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-orange-50 dark:bg-inherit glass-effect rounded-lg p-6">
+              <p class="mb-4 text-lg">
+                "As a Wildlife manager, wildlife law program offered by Nature Extant bridges the gap between ordinary science studies of wildlife management and environmental law that are key facets in the field. The course is taylor made to cater for professionals who wants to learn and improve their knowledge of law enforcement and policy"
+              </p>
+              <div class="flex items-center">
+                <img
+                  src="assets/images/students/picket.png"
+                  width="150px"
+                  height="150px"
+                  alt="Picket"
+                  class="rounded-lg mr-4"
+                />
+                <div>
+                  <p class="font-semibold">Picket</p>
+                  <p class="text-sm text-teal-900 dark:text-gray-300"> Wildlife Manager</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-orange-50 dark:bg-inherit glass-effect rounded-lg p-6">
+              <p class="mb-4 text-lg">
+                "The program provides  comprehensive knowledge of national and international laws,treaties and conventions governing wildlife conservation, empowering me to contribute to the protection of biodiversity and promote sustainable  development.It has given me immense expertise in wildlife law enforcement and legislation. "
+              </p>
+              <div class="flex items-center">
+                <img
+                  src="assets/images/students/Nomsa Ntini.png"
+                  width="150px"
+                  height="150px"
+                  alt="Nomsa Ntini"
+                  class="rounded-lg mr-4"
+                />
+                <div>
+                  <p class="font-semibold">Nomsa Ntini</p>
+                  <p class="text-sm text-teal-900 dark:text-gray-300">Investigator Zimparks</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-orange-50 dark:bg-inherit glass-effect rounded-lg p-6">
+              <p class="mb-4 text-lg">
+                "Wildlife law and policy program offered by Nature Extant Learning Centre represents a cutting-edge solution to global wildlife challenges. The program explores wildlife management's historical transformation from traditional royal game conservation to community-based natural resources management. Nature Extant Learning Centre bridges the gap in wildlife law management, emphasizing interconnectedness between humans, wildlife, and environment within a harmonious ecosystem. I am proud to have received invaluable knowledge, embracing sustainability and gaining insights into wildlife law, policy, community-based wildlife management, international law, and advocacy."
+              </p>
+              <div class="flex items-center">
+                <img
+                  src="assets/images/students/Clever Mukazhu.png"
+                  width="150px"
+                  height="150px"
+                  alt="Picket"
+                  class="rounded-lg mr-4"
+                />
+                <div>
+                  <p class="font-semibold">Clever Mukazvhu</p>
+                  <p class="text-sm text-teal-900 dark:text-gray-300"> WILDLIFE LAW OFFICER
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-orange-50 dark:bg-inherit glass-effect rounded-lg p-6">
+              <p class="mb-4 text-lg">
+                "This diploma has elevated my journalism, empowering me to drive meaningful conversations and advocate for effective wildlife conservation practices, ultimately contributing to a better future where nature and humans thrive in harmony"
+              </p>
+              <div class="flex items-center">
+                <img
+                  src="assets/images/students/rumbidzai takawira.png"
+                  width="150px"
+                  height="150px"
+                  alt="Rumbidzai Takawira."
+                  class="rounded-lg mr-4"
+                />
+                <div>
+                  <p class="font-semibold">Rumbidzai Takawira</p>
+                  <p class="text-sm text-teal-900 dark:text-gray-300">Journalist (conservation conversation)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+        </body>
+
+ <!--Footer Section-->
+
+<!-- Footer Container -->
+<footer class="bg-gradient-to-b from-teal-900 to-teal-950 text-white">
+  <div class="max-w-7xl mx-auto px-4 py-12 footer-content">
+    <!-- Main Footer Content -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Logo Section -->
+      <div class="flex flex-col space-y-4">
+        <div class="flex items-center space-x-3 group cursor-pointer">
+          <div class="w-48 h-48 bg-white rounded overflow-hidden transform transition-transform group-hover:scale-110">
+            <img 
+              src="assets/images/Transparent logos-02.png" 
+              alt="Nature Extant Logo" 
+              class="w-full h-full object-cover"
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- About Section -->
+      <div class="transform hover:-translate-y-1 transition-transform duration-300">
+        <h3 class="text-lg font-semibold mb-4 text-teal-400">About Us</h3>
+        <p class="text-md hover:text-white transition-colors">
+          We are a dedicated educational institute mandated to empowering the next generation of animal law advocates. 
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4 text-teal-400">Quick Links</h3>
+        <ul class="space-y-2 text-md">
+          <li>
+            <a href="mailto:info@natureextant.com" target="_blank" class="quick-link hover:text-teal-400 transition-colors">Careers</a>
+          </li>
+          <li>
+            <a href="About.html" class="quick-link hover:text-teal-400 transition-colors">About</a>
+          </li>
+          <li>
+            <a href="modules.html" class="quick-link hover:text-teal-400 transition-colors">Our Modules</a>
+          </li>
+          <li>
+            <a href="students.html" class="quick-link hover:text-teal-400 transition-colors">Our Student Stories</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact Details -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4 text-teal-400">Contact Us</h3>
+        <div class="space-y-4 text-md">
+          <div class="contact-item flex items-center space-x-2 hover:text-teal-400 cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            <div>
+              <p>+263 783 656 802</p>
+              <p>+263 864 425 2865</p>
+            </div>
+          </div>
+          <div class="contact-item flex items-center space-x-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <a href="mailto:info@natureextant.com" target="_blank" class="hover:text-teal-400 transition-colors">
+              info@natureextant.com
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Copyright and Social Links -->
+    <div class="mt-12 pt-8 border-t border-teal-800">
+      <div class="flex flex-col sm:flex-row justify-between items-center text-md text-white">
+        <p class="hover:text-teal-400 transition-colors cursor-pointer">Designed and developed by <a href="www.claudius-mainja" target="_blank" >Claudius Mainja</a></p>
+        <div class="flex space-x-6 mt-4 sm:mt-0">
+          <!-- Facebook Icon -->
+          <a href="https://www.facebook.com/profile.php?id=61568998945243" target="_blank" class="social-icon hover:text-teal-400 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+            </svg>
+          </a>
+
+          <!-- Instagram Icon -->
+          <a href="https://www.facebook.com/profile.php?id=61568998945243" target="_blank" class="social-icon hover:text-teal-400 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+          <!-- LinkedIn Icon -->
+          <a href="https://www.linkedin.com/company/105676539/admin/dashboard/" target="_blank" class="social-icon hover:text-teal-400 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</html>

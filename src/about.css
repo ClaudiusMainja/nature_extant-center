@@ -1,0 +1,62 @@
+.team-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.team-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px 16px 0 0;
+}
+
+.image-wrapper img {
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-card:hover .image-wrapper img {
+    transform: scale(1.08);
+}
+
+.content-overlay {
+    background: linear-gradient(to top, rgba(22, 163, 74, 0.7), transparent);
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.team-card:hover .content-overlay {
+    opacity: 1;
+}
+
+.featured-card {
+    transform: translateY(30px);
+    opacity: 0;
+}
+
+.featured-card.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.section-header {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.section-header.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.6s ease;
+}
