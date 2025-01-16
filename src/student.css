@@ -1,0 +1,61 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+.hero-overlay {
+    background: linear-gradient(135deg, rgba(0, 100, 0, 0.8), rgba(0, 128, 128, 0.9));
+}
+.testimonial-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+.testimonial-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #006400, #008080);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+.testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+.testimonial-card:hover::before {
+    transform: scaleX(1);
+}
+.lazy-image {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+.lazy-image.loaded {
+    opacity: 1;
+}
+.quote-mark {
+    position: absolute;
+    font-size: 120px;
+    opacity: 0.1;
+    font-family: Georgia, serif;
+    top: -20px;
+    right: 20px;
+}
+.wave-divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+.student-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+.student-image-wrapper:hover {
+    transform: scale(1.05);
+}

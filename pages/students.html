@@ -36,6 +36,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="/footer.css">
+    <link rel="stylesheet" href="/src/student.css">
   </head>
 
  <!---Author: Claudius Mainja-->
@@ -47,7 +48,7 @@
           <div class="flex justify-between h-20">
             <!-- Logo -->
             <div class="flex-shrink-0 flex items-center">
-              <img src="assets/images/Transparent logos-02.png" alt="Nature Extant" class="h-16 w-auto"/>
+              <img src="/assets/images/Transparent logos-02.png" alt="Nature Extant" class="h-16 w-auto"/>
             </div>
   
             <!-- Desktop Menu -->
@@ -115,238 +116,284 @@
         </div>
       </nav>
     </header>
-    <body>
-
-<section >
-    
-        <!-- Hero Section -->
-        <div class="relative h-screen bg-green-900">
-            <div class="absolute inset-0">
-                <img src="assets/images/homebg.png" alt="Nature Background" class="w-full h-full object-cover opacity-40 ">
-            </div>
-            <div class="relative flex items-center justify-center h-full  content-center ">
-                <div class="text-center" x-data="{ shown: false }" x-init="setTimeout(() => shown = true, 500)">
-                    <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl transition-all duration-1000"
-                        :class="shown ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'">
-                       Our Current Student Stories
-                    </h1>
-                    <p class="mt-6 text-xl text-gray-200 transition-all duration-1000 delay-300"
-                        :class="shown ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'">
-                      Listen to our Alumni and current student stories and how they have been impacted
-                    </p>
-                    <a href="#students" class="mt-8 inline-block animate-bounce cursor-pointer">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-       <section id="students" class="py-20 m-auto md:m-14 sm:m-10">
-        <div class="container m-auto px-4">
-          <h2 class="text-4xl font-bold text-center mb-12 text-teal-900 dark:text-white">
-            Our Student Stories
-          </h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-orange-50 dark:bg-inherit glass-effect rounded-lg p-6">
-              <p class="mb-4 text-lg">
-                "I took the program because having worked for Zimbabwe Parks and Wildlife Management Authority as a Public Relations Manager for 8 years, I have the knowledge but no paper to show for it.The modules match perfectly the experience I acquired over the year.I don't regret joining the program only wish it had been started way back."
-              </p>
-              <div class="flex items-center">
-                <img
-                  src="assets/images/students/Caroline Washaya.jpg"
-                  width="150px"
-                  height="150px"
-                  alt="Caroline Washaya-."
-                  class="rounded-lg mr-4"
-                />
-                <div>
-                  <p class="font-semibold">Caroline Washaya-Moyo</p>
-                  <p class="text-sm text-teal-900 dark:text-white">Journalist </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-orange-50 dark:bg-inherit glass-effect rounded-lg p-6">
-              <p class="mb-4 text-lg">
-                " I took a lifetime learning decision to pursue the wildlife law studies offered by Nature Extant learning Centre because my role in the multi billion dollar wildlife industry will NEVER be the same. These studies will definitely make me well equipped with skills, understanding  and requisite  knowledge in dealing with all wildlife matters as a wildlife law officer "
-              </p>
-              <div class="flex items-center">
-                <img
-                  src="assets/images/students/Kuvarega Munyonga.png"
-                  width="150px"
-                  height="150px"
-                  alt="Kuvarega Manyonga"
-                  class="rounded-lg mr-4"
-                />
-                <div>
-                  <p class="font-semibold">Kuvarega Manyonga</p>
-                  <p class="text-sm text-teal-900 dark:text-gray-300">Wildlife Law Officer</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-orange-50 dark:bg-inherit glass-effect rounded-lg p-6">
-              <p class="mb-4 text-lg">
-                "I have been a volunteer in conservation work for close to a decade now, testament to my love and passion for nature.  Through Nature Extant, I feel legally capacitated and guided in my work and community, protecting ecologically sensetive areas."
-              </p>
-              <div class="flex items-center">
-                <img
-                  src="assets/images/students/MoreBrian Mazaza.png"
-                  width="150px"
-                  height="150px"
-                  alt="Morebrian Marara."
-                  class="rounded-lg mr-4"
-                />
-                <div>
-                  <p class="font-semibold">Morebrian Marara</p>
-                  <p class="text-sm text-teal-900 dark:text-gray-300">-Manyame Conservation Trust</p>
-                </div>
-              </div>
-            </div>
-
-        
-            
-            <div class="bg-orange-50 dark:bg-inherit glass-effect rounded-lg p-6">
-              <p class="mb-4 text-lg">
-                "It has motivated me to pursue animal law with ardent zeal. The curriculum package is rich in legal education, equipping one with knowledge and skills enough to advocate for animal welfare and conservation. The learning process leaves you with a transformed mindset, making you a person with a definite goal to make the earth a better place for animals"
-              </p>
-              <div class="flex items-center">
-                <img
-                  src="assets/images/students/Phonos Nyakudya.png"
-                  width="150px"
-                  height="150px"
-                  alt="phonos Nyakudya"
-                  class="rounded-lg mr-4"
-                />
-                <div>
-                  <p class="font-semibold">Phonos Nyakudya</p>
-                  <p class="text-sm text-teal-900 dark:text-gray-300">SOFA Legal Officer</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-orange-50 dark:bg-inherit glass-effect rounded-lg p-6">
-              <p class="mb-4 text-lg">
-                "The curriculum is thoughtfully designed, blending theoretical knowledge with practical advocacy skills, empowering students to make a real impact in our communities. I am proud to be part of a program that prioritizes sustainable management and protection of our invaluable wildlife heritage.."
-              </p>
-              <div class="flex items-center">
-                <img
-                  src="assets/images/students/Victor Marambi.png"
-                  width="150px"
-                  height="150px"
-                  alt="Victor Marambi"
-                  class="rounded-lg mr-4"
-                />
-                <div>
-                  <p class="font-semibold">Victor Marambi</p>
-                  <p class="text-sm text-teal-900 dark:text-gray-300">-Lawyer (Jiti Law Chambers)</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-orange-50 dark:bg-inherit glass-effect rounded-lg p-6">
-              <p class="mb-4 text-lg">
-                "As a Head Law Enforcement for Umfurudzi Park,  I realised that we were losing a lot of cases in court due to limited knowledge in Wildlife Law. I realised that to bridge that gap I have to enroll for a National Diploma in Wildlife Law and Policy. So far the modules taught has prepared me with the necessary ammunition to defend our Wildlife and speak out for them"
-              </p>
-              <div class="flex items-center">
-                <img
-                  src="assets/images/students/Innocent Mupedze.png"
-                  width="150px"
-                  height="150px"
-                  alt="Innocent Mupedze"
-                  class="rounded-lg mr-4"
-                />
-                <div>
-                  <p class="font-semibold">Innocent Mupedze</p>
-                  <p class="text-sm text-teal-900 dark:text-gray-300">Umpfurudzi park</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-orange-50 dark:bg-inherit glass-effect rounded-lg p-6">
-              <p class="mb-4 text-lg">
-                "As a Wildlife manager, wildlife law program offered by Nature Extant bridges the gap between ordinary science studies of wildlife management and environmental law that are key facets in the field. The course is taylor made to cater for professionals who wants to learn and improve their knowledge of law enforcement and policy"
-              </p>
-              <div class="flex items-center">
-                <img
-                  src="assets/images/students/picket.png"
-                  width="150px"
-                  height="150px"
-                  alt="Picket"
-                  class="rounded-lg mr-4"
-                />
-                <div>
-                  <p class="font-semibold">Picket</p>
-                  <p class="text-sm text-teal-900 dark:text-gray-300"> Wildlife Manager</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-orange-50 dark:bg-inherit glass-effect rounded-lg p-6">
-              <p class="mb-4 text-lg">
-                "The program provides  comprehensive knowledge of national and international laws,treaties and conventions governing wildlife conservation, empowering me to contribute to the protection of biodiversity and promote sustainable  development.It has given me immense expertise in wildlife law enforcement and legislation. "
-              </p>
-              <div class="flex items-center">
-                <img
-                  src="assets/images/students/Nomsa Ntini.png"
-                  width="150px"
-                  height="150px"
-                  alt="Nomsa Ntini"
-                  class="rounded-lg mr-4"
-                />
-                <div>
-                  <p class="font-semibold">Nomsa Ntini</p>
-                  <p class="text-sm text-teal-900 dark:text-gray-300">Investigator Zimparks</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-orange-50 dark:bg-inherit glass-effect rounded-lg p-6">
-              <p class="mb-4 text-lg">
-                "Wildlife law and policy program offered by Nature Extant Learning Centre represents a cutting-edge solution to global wildlife challenges. The program explores wildlife management's historical transformation from traditional royal game conservation to community-based natural resources management. Nature Extant Learning Centre bridges the gap in wildlife law management, emphasizing interconnectedness between humans, wildlife, and environment within a harmonious ecosystem. I am proud to have received invaluable knowledge, embracing sustainability and gaining insights into wildlife law, policy, community-based wildlife management, international law, and advocacy."
-              </p>
-              <div class="flex items-center">
-                <img
-                  src="assets/images/students/Clever Mukazhu.png"
-                  width="150px"
-                  height="150px"
-                  alt="Picket"
-                  class="rounded-lg mr-4"
-                />
-                <div>
-                  <p class="font-semibold">Clever Mukazvhu</p>
-                  <p class="text-sm text-teal-900 dark:text-gray-300"> WILDLIFE LAW OFFICER
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-orange-50 dark:bg-inherit glass-effect rounded-lg p-6">
-              <p class="mb-4 text-lg">
-                "This diploma has elevated my journalism, empowering me to drive meaningful conversations and advocate for effective wildlife conservation practices, ultimately contributing to a better future where nature and humans thrive in harmony"
-              </p>
-              <div class="flex items-center">
-                <img
-                  src="assets/images/students/rumbidzai takawira.png"
-                  width="150px"
-                  height="150px"
-                  alt="Rumbidzai Takawira."
-                  class="rounded-lg mr-4"
-                />
-                <div>
-                  <p class="font-semibold">Rumbidzai Takawira</p>
-                  <p class="text-sm text-teal-900 dark:text-gray-300">Journalist (conservation conversation)</p>
-                </div>
-              </div>
-            </div>
+    <body class="bg-gradient-to-br from-gray-50 to-gray-100">
+      <!-- Hero Section -->
+      <div class="relative h-[90vh] overflow-hidden">
+          <div class="absolute inset-0 hero-overlay"></div>
+          <div class="absolute inset-0">
+              <img src="/assets/images/studenthr.png" alt="Nature Background" class="w-full h-full object-cover opacity-40 lazy-image">
           </div>
-        </div>
+          <div class="relative container mx-auto px-4 h-full flex items-center justify-center">
+              <div class="text-center" data-aos="fade-up" data-aos-duration="1200">
+                  <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
+                      Our Current Student Stories
+                  </h1>
+                  <p class="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+                      Listen to our Alumni and current student stories and how they have been impacted
+                  </p>
+                  <a href="#stories" class="mt-16 inline-block animate-bounce bg-white/10 p-4 rounded-full backdrop-blur-sm">
+                      <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                      </svg>
+                  </a>
+              </div>
+          </div>
+          <div class="wave-divider">
+              <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="h-24 w-full">
+                  <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" 
+                      fill="#ffffff"></path>
+              </svg>
+          </div>
+      </div>
+  
+      <!-- Stories Section -->
+      <section id="stories" class="py-24 relative">
+          <div class="container mx-auto px-4">
+              <h2 class="text-4xl md:text-5xl font-bold text-center mb-20 text-teal-900" data-aos="fade-up">
+                  Our Student Stories
+              </h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  <!-- Caroline -->
+                  <div class="testimonial-card bg-white rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                      <div class="p-8 relative">
+                          <span class="quote-mark">"</span>
+                          <div class="flex flex-col items-center mb-6">
+                              <div class="student-image-wrapper mb-4">
+                                  <img src="/assets/images/students/Caroline Washaya.jpg" alt="Caroline Washaya" 
+                                      class="w-24 h-24 rounded-full object-cover lazy-image shadow-lg">
+                              </div>
+                              <div class="text-center">
+                                  <h3 class="font-semibold text-xl text-teal-900">Caroline Washaya-Moyo</h3>
+                                  <p class="text-teal-700 font-medium">Journalist</p>
+                              </div>
+                          </div>
+                          <p class="text-gray-600 leading-relaxed relative z-10">
+                              "I took the program because having worked for Zimbabwe Parks and Wildlife Management Authority as a Public Relations Manager for 8 years, I have the knowledge but no paper to show for it. The modules match perfectly the experience I acquired over the year. I don't regret joining the program only wish it had been started way back."
+                          </p>
+                      </div>
+                  </div>
+  
+                  <!-- Kuvarega -->
+                  <div class="testimonial-card bg-white rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                      <div class="p-8 relative">
+                          <span class="quote-mark">"</span>
+                          <div class="flex flex-col items-center mb-6">
+                              <div class="student-image-wrapper mb-4">
+                                  <img src="/assets/images/students/Kuvarega Munyonga.png" alt="Kuvarega Manyonga" 
+                                      class="w-24 h-24 rounded-full object-cover lazy-image shadow-lg">
+                              </div>
+                              <div class="text-center">
+                                  <h3 class="font-semibold text-xl text-teal-900">Kuvarega Manyonga</h3>
+                                  <p class="text-teal-700 font-medium">Wildlife Law Officer</p>
+                              </div>
+                          </div>
+                          <p class="text-gray-600 leading-relaxed relative z-10">
+                              "I took a lifetime learning decision to pursue the wildlife law studies offered by Nature Extant learning Centre because my role in the multi billion dollar wildlife industry will NEVER be the same. These studies will definitely make me well equipped with skills, understanding and requisite knowledge in dealing with all wildlife matters as a wildlife law officer"
+                          </p>
+                      </div>
+                  </div>
+  
+                  <!-- Morebrian -->
+                  <div class="testimonial-card bg-white rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                      <div class="p-8 relative">
+                          <span class="quote-mark">"</span>
+                          <div class="flex flex-col items-center mb-6">
+                              <div class="student-image-wrapper mb-4">
+                                  <img src="/assets/images/students/MoreBrian Mazaza.png" alt="Morebrian Marara" 
+                                      class="w-24 h-24 rounded-full object-cover lazy-image shadow-lg">
+                              </div>
+                              <div class="text-center">
+                                  <h3 class="font-semibold text-xl text-teal-900">Morebrian Marara</h3>
+                                  <p class="text-teal-700 font-medium">Manyame Conservation Trust</p>
+                              </div>
+                          </div>
+                          <p class="text-gray-600 leading-relaxed relative z-10">
+                              "I have been a volunteer in conservation work for close to a decade now, testament to my love and passion for nature. Through Nature Extant, I feel legally capacitated and guided in my work and community, protecting ecologically sensetive areas."
+                          </p>
+                      </div>
+                  </div>
+  
+                  <!-- Additional students following the same pattern -->
+                  <!-- Phonos -->
+                  <div class="testimonial-card bg-white rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="400">
+                      <div class="p-8 relative">
+                          <span class="quote-mark">"</span>
+                          <div class="flex flex-col items-center mb-6">
+                              <div class="student-image-wrapper mb-4">
+                                  <img src="/assets/images/students/Phonos Nyakudya.png" alt="Phonos Nyakudya" 
+                                      class="w-24 h-24 rounded-full object-cover lazy-image shadow-lg">
+                              </div>
+                              <div class="text-center">
+                                  <h3 class="font-semibold text-xl text-teal-900">Phonos Nyakudya</h3>
+                                  <p class="text-teal-700 font-medium">SOFA Legal Officer</p>
+                              </div>
+                          </div>
+                          <p class="text-gray-600 leading-relaxed relative z-10">
+                              "It has motivated me to pursue animal law with ardent zeal. The curriculum package is rich in legal education, equipping one with knowledge and skills enough to advocate for animal welfare and conservation. The learning process leaves you with a transformed mindset, making you a person with a definite goal to make the earth a better place for animals"
+                          </p>
+                      </div>
+                  </div>
+  
+                  <!-- Victor -->
+                  <div class="testimonial-card bg-white rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="500">
+                      <div class="p-8 relative">
+                          <span class="quote-mark">"</span>
+                          <div class="flex flex-col items-center mb-6">
+                              <div class="student-image-wrapper mb-4">
+                                  <img src="/assets/images/students/Victor Marambi.png" alt="Victor Marambi" 
+                                      class="w-24 h-24 rounded-full object-cover lazy-image shadow-lg">
+                              </div>
+                              <div class="text-center">
+                                  <h3 class="font-semibold text-xl text-teal-900">Victor Marambi</h3>
+                                  <p class="text-teal-700 font-medium">Lawyer (Jiti Law Chambers)</p>
+                              </div>
+                          </div>
+                          <p class="text-gray-600 leading-relaxed relative z-10">
+                              "The curriculum is thoughtfully designed, blending theoretical knowledge with practical advocacy skills, empowering students to make a real impact in our communities. I am proud to be part of a program that prioritizes sustainable management and protection of our invaluable wildlife heritage."
+                          </p>
+                      </div>
+                  </div>
+  
+<!-- Innocent -->
+<div class="testimonial-card bg-white rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="600">
+  <div class="p-8 relative">
+      <span class="quote-mark">"</span>
+      <div class="flex flex-col items-center mb-6">
+          <div class="student-image-wrapper mb-4">
+              <img src="/assets/images/students/Innocent Mupedze.png" alt="Innocent Mupedze" 
+                  class="w-24 h-24 rounded-full object-cover lazy-image shadow-lg">
+          </div>
+          <div class="text-center">
+              <h3 class="font-semibold text-xl text-teal-900">Innocent Mupedze</h3>
+              <p class="text-teal-700 font-medium">Umpfurudzi park</p>
+          </div>
+      </div>
+      <p class="text-gray-600 leading-relaxed relative z-10">
+          "As a Head Law Enforcement for Umfurudzi Park, I realised that we were losing a lot of cases in court due to limited knowledge in Wildlife Law. I realised that to bridge that gap I have to enroll for a National Diploma in Wildlife Law and Policy. So far the modules taught has prepared me with the necessary ammunition to defend our Wildlife and speak out for them"
+      </p>
+  </div>
+</div>
 
+<!-- Picket -->
+<div class="testimonial-card bg-white rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="700">
+  <div class="p-8 relative">
+      <span class="quote-mark">"</span>
+      <div class="flex flex-col items-center mb-6">
+          <div class="student-image-wrapper mb-4">
+              <img src="/assets/images/students/picket.png" alt="Picket" 
+                  class="w-24 h-24 rounded-full object-cover lazy-image shadow-lg">
+          </div>
+          <div class="text-center">
+              <h3 class="font-semibold text-xl text-teal-900">Picket</h3>
+              <p class="text-teal-700 font-medium">Wildlife Manager</p>
+          </div>
+      </div>
+      <p class="text-gray-600 leading-relaxed relative z-10">
+          "As a Wildlife manager, wildlife law program offered by Nature Extant bridges the gap between ordinary science studies of wildlife management and environmental law that are key facets in the field. The course is taylor made to cater for professionals who wants to learn and improve their knowledge of law enforcement and policy"
+      </p>
+  </div>
+</div>
+
+<!-- Nomsa -->
+<div class="testimonial-card bg-white rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="800">
+  <div class="p-8 relative">
+      <span class="quote-mark">"</span>
+      <div class="flex flex-col items-center mb-6">
+          <div class="student-image-wrapper mb-4">
+              <img src="/assets/images/students/Nomsa Ntini.png" alt="Nomsa Ntini" 
+                  class="w-24 h-24 rounded-full object-cover lazy-image shadow-lg">
+          </div>
+          <div class="text-center">
+              <h3 class="font-semibold text-xl text-teal-900">Nomsa Ntini</h3>
+              <p class="text-teal-700 font-medium">Investigator Zimparks</p>
+          </div>
+      </div>
+      <p class="text-gray-600 leading-relaxed relative z-10">
+          "The program provides comprehensive knowledge of national and international laws, treaties and conventions governing wildlife conservation, empowering me to contribute to the protection of biodiversity and promote sustainable development. It has given me immense expertise in wildlife law enforcement and legislation."
+      </p>
+  </div>
+</div>
+
+<!-- Clever -->
+<div class="testimonial-card bg-white rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="900">
+  <div class="p-8 relative">
+      <span class="quote-mark">"</span>
+      <div class="flex flex-col items-center mb-6">
+          <div class="student-image-wrapper mb-4">
+              <img src="/assets/images/students/Clever Mukazhu.png" alt="Clever Mukazvhu" 
+                  class="w-24 h-24 rounded-full object-cover lazy-image shadow-lg">
+          </div>
+          <div class="text-center">
+              <h3 class="font-semibold text-xl text-teal-900">Clever Mukazvhu</h3>
+              <p class="text-teal-700 font-medium">Wildlife Law Officer</p>
+          </div>
+      </div>
+      <p class="text-gray-600 leading-relaxed relative z-10">
+          "Wildlife law and policy program offered by Nature Extant Learning Centre represents a cutting-edge solution to global wildlife challenges. The program explores wildlife management's historical transformation from traditional royal game conservation to community-based natural resources management. Nature Extant Learning Centre bridges the gap in wildlife law management, emphasizing interconnectedness between humans, wildlife, and environment within a harmonious ecosystem. I am proud to have received invaluable knowledge, embracing sustainability and gaining insights into wildlife law, policy, community-based wildlife management, international law, and advocacy."
+      </p>
+  </div>
+</div>
+
+<!-- Rumbidzai -->
+<div class="testimonial-card bg-white rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="1000">
+  <div class="p-8 relative">
+      <span class="quote-mark">"</span>
+      <div class="flex flex-col items-center mb-6">
+          <div class="student-image-wrapper mb-4">
+              <img src="/assets/images/students/rumbidzai takawira.png" alt="Rumbidzai Takawira" 
+                  class="w-24 h-24 rounded-full object-cover lazy-image shadow-lg">
+          </div>
+          <div class="text-center">
+              <h3 class="font-semibold text-xl text-teal-900">Rumbidzai Takawira</h3>
+              <p class="text-teal-700 font-medium">Journalist (conservation conversation)</p>
+          </div>
+      </div>
+      <p class="text-gray-600 leading-relaxed relative z-10">
+          "This diploma has elevated my journalism, empowering me to drive meaningful conversations and advocate for effective wildlife conservation practices, ultimately contributing to a better future where nature and humans thrive in harmony"
+      </p>
+  </div>
+</div>
+                  
+              </div>
+          </div>
       </section>
-        </body>
+  
+      <script>
+          // Initialize AOS
+          AOS.init({
+              duration: 1000,
+              once: true,
+              offset: 100
+          });
+  
+          // Lazy loading for images
+          document.addEventListener('DOMContentLoaded', function() {
+              const lazyImages = document.querySelectorAll('.lazy-image');
+              
+              const imageObserver = new IntersectionObserver((entries, observer) => {
+                  entries.forEach(entry => {
+                      if (entry.isIntersecting) {
+                          const img = entry.target;
+                          img.classList.add('loaded');
+                          observer.unobserve(img);
+                      }
+                  });
+              });
+  
+              lazyImages.forEach(img => imageObserver.observe(img));
+          });
+  
+          // Smooth scroll
+          document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+              anchor.addEventListener('click', function (e) {
+                  e.preventDefault();
+                  document.querySelector(this.getAttribute('href')).scrollIntoView({
+                      behavior: 'smooth'
+                  });
+              });
+          });
+      </script>
+  </body>
 
  <!--Footer Section-->
 
@@ -360,7 +407,7 @@
         <div class="flex items-center space-x-3 group cursor-pointer">
           <div class="w-48 h-48 bg-white rounded overflow-hidden transform transition-transform group-hover:scale-110">
             <img 
-              src="assets/images/Transparent logos-02.png" 
+              src="/assets/images/Transparent logos-02.png" 
               alt="Nature Extant Logo" 
               class="w-full h-full object-cover"
             >
@@ -384,13 +431,13 @@
             <a href="mailto:info@natureextant.com" target="_blank" class="quick-link hover:text-teal-400 transition-colors">Careers</a>
           </li>
           <li>
-            <a href="About.html" class="quick-link hover:text-teal-400 transition-colors">About</a>
+            <a href="/pages/About.html" class="quick-link hover:text-teal-400 transition-colors">About</a>
           </li>
           <li>
-            <a href="modules.html" class="quick-link hover:text-teal-400 transition-colors">Our Modules</a>
+            <a href="/pages/programs.html" class="quick-link hover:text-teal-400 transition-colors">Our Modules</a>
           </li>
           <li>
-            <a href="students.html" class="quick-link hover:text-teal-400 transition-colors">Our Student Stories</a>
+            <a href="/pages/students.html" class="quick-link hover:text-teal-400 transition-colors">Our Student Stories</a>
           </li>
         </ul>
       </div>
