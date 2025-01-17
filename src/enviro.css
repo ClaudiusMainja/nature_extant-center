@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+        
+:root {
+    --primary-green: #008080;
+    --accent-gold: #FFD700;
+    --secondary-green: #4CAF50;
+}
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+.program-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.custom-shape {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}

@@ -33,9 +33,12 @@
      <!-- Tailwind and External Resources -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="/src/footer.css">
+    <link rel="stylesheet" href="/src/enviro.css">
   </head>
 
  <!---Author: Claudius Mainja-->
@@ -116,20 +119,112 @@
       </nav>
     </header>
     <body>
-      <div class="container mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div class="p-4">
-            <h1 class="text-4xl font-bold text-center">Environmental Education</h1>
-            <p class="text-justify">
-              Our environmental education program is designed to provide students with the knowledge and skills to become effective advocates for the environment. We offer a range of courses that cover topics such as climate change, biodiversity, and conservation. Our courses are taught by experts in the field and are designed to be engaging and interactive. Students will have the opportunity to learn about the latest research and developments in environmental science, as well as participate in hands-on activities and field trips. Our goal is to inspire students to take action to protect the environment and create a more sustainable future for all.
-            </p>
-          </div>
-          <div class="p-4">
-            <img src="/assets/images/environmental-education.jpg" alt="Environmental Education" class="w-full h-full object-cover"/>
-          </div>
+       <!-- Hero Section -->
+       <section class="custom-shape bg-teal-800 text-white py-40 px-4 relative ">
+        <div class="max-w-6xl mx-auto" data-aos="fade-up">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Environmental Learning Centre</h1>
+            <p class="text-xl md:text-2xl max-w-2xl">Empowering individuals with knowledge and skills to protect our environment through modern professional training programs.</p>
         </div>
-      </div>
+    </section>
 
+    <!-- Professional Programs Section -->
+    <section class="py-16 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-teal-600 mb-12 text-center" data-aos="fade-up">Professional Programs</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="program-card bg-white rounded-lg p-8 shadow-lg" data-aos="fade-up">
+                    <h3 class="text-2xl font-semibold text-teal-600 mb-4">National Certificate in GIS</h3>
+                    <p class="text-gray-600">Comprehensive training in Geographic Information Systems for environmental management and spatial analysis.</p>
+                    <a href="mailto:info@natureextant.com" target="_blank">
+                    <button class="mt-6 bg-teal-600 text-white px-6 py-2 rounded-full hover:bg-teal-700 transition duration-300">Learn More</button>
+                  </a>
+                </div>
+                <div class="program-card bg-white rounded-lg p-8 shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-2xl font-semibold text-teal-600 mb-4">Executive Certificate in ESG</h3>
+                    <p class="text-gray-600">Performance Measurement & Reporting for sustainability professionals and business leaders.</p>
+                    <a href="mailto:info@natureextant.com" target="_blank">
+                    <button class="mt-6 bg-teal-600 text-white px-6 py-2 rounded-full hover:bg-teal-700 transition duration-300">Learn More</button>
+                  </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Short Courses Section -->
+    <section class="py-16 px-4 bg-gray-100">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-teal-600 mb-12 text-center" data-aos="fade-up">Short Courses</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="program-card bg-white rounded-lg p-6 shadow-lg" data-aos="fade-up">
+                    <div class="h-2 bg-yellow-400 rounded-t-lg mb-4"></div>
+                    <h3 class="text-xl font-semibold text-teal-600 mb-3">Climate Change</h3>
+                    <p class="text-gray-600">Understanding climate science, impacts, and mitigation strategies.</p>
+                    <a href="mailto:info@natureextant.com" target="_blank">
+                      <button class="mt-6 bg-teal-600 text-white px-6 py-2 rounded-full hover:bg-teal-700 transition duration-300">Enroll Now</button>
+                    </a>
+                </div>
+                <div class="program-card bg-white rounded-lg p-6 shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-2 bg-yellow-400 rounded-t-lg mb-4"></div>
+                    <h3 class="text-xl font-semibold text-teal-600 mb-3">GIS</h3>
+                    <p class="text-gray-600">Practical applications of GIS in environmental management.</p>
+                    <a href="mailto:info@natureextant.com" target="_blank">
+                      <button class="mt-6 bg-teal-600 text-white px-6 py-2 rounded-full hover:bg-teal-700 transition duration-300">Enroll Now</button>
+                    </a>
+                </div>
+                <div class="program-card bg-white rounded-lg p-6 shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-2 bg-yellow-400 rounded-t-lg mb-4"></div>
+                    <h3 class="text-xl font-semibold text-teal-600 mb-3">Conservation Agriculture</h3>
+                    <p class="text-gray-600">Sustainable farming practices and ecosystem preservation.</p>
+                    <a href="mailto:info@natureextant.com" target="_blank">
+                      <button class="mt-6 bg-teal-600 text-white px-6 py-2 rounded-full hover:bg-teal-700 transition duration-300">Enroll Now</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Topics Covered Section -->
+    <section class="py-16 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-teal-600 mb-12 text-center" data-aos="fade-up">Topics Covered</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up">
+                    <h3 class="text-lg font-semibold text-teal-600 mb-2">ESG Concepts & Strategy</h3>
+                    <p class="text-gray-600">Foundation principles and strategic implementation</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-lg font-semibold text-teal-600 mb-2">Environmental Stewardship</h3>
+                    <p class="text-gray-600">Sustainable practices and resource management</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-lg font-semibold text-teal-600 mb-2">ESG Performance Measurement</h3>
+                    <p class="text-gray-600">Metrics and evaluation frameworks</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="text-lg font-semibold text-teal-600 mb-2">Carbon Footprint</h3>
+                    <p class="text-gray-600">Assessment and reduction strategies</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
     </body>
     
 <!-- Footer Container -->
